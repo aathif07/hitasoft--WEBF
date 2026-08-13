@@ -64,3 +64,15 @@ html{scroll-padding-top:76px}.section,.hero,.logo-strip{scroll-margin-top:76px}.
 .hero:after{background:radial-gradient(ellipse 54% 55% at 50% 43%,rgba(255,255,255,.98) 0%,rgba(255,255,255,.9) 45%,rgba(255,255,255,.3) 70%,transparent 82%)}
 @media(max-width:900px){.hero{min-height:680px;padding-top:150px;padding-bottom:96px}}
 @media(max-width:640px){.hero{min-height:650px;padding-top:132px;padding-bottom:78px}.hero:before{opacity:.62}.hero:after{background:radial-gradient(ellipse 72% 58% at 50% 43%,rgba(255,255,255,.98),rgba(255,255,255,.88) 48%,rgba(255,255,255,.22) 72%,transparent 84%)}}
+
+/* Slow moving blue light fields around the hero perimeter. */
+@keyframes glow-float-left{0%,100%{transform:translate3d(-10%,-4%,0) scale(.92);opacity:.58}45%{transform:translate3d(25%,10%,0) scale(1.12);opacity:.86}75%{transform:translate3d(8%,-12%,0) scale(1.02);opacity:.7}}
+@keyframes glow-float-right{0%,100%{transform:translate3d(9%,-12%,0) scale(1);opacity:.62}50%{transform:translate3d(-28%,18%,0) scale(1.18);opacity:.88}}
+@keyframes glow-sweep-bottom{0%,100%{transform:translate3d(-22%,8%,0) scaleX(.9);opacity:.44}50%{transform:translate3d(38%,-8%,0) scaleX(1.18);opacity:.72}}
+.hero .ripple{display:block;position:absolute;border:0;border-radius:50%;pointer-events:none;z-index:1;will-change:transform,opacity;filter:blur(54px)}
+.hero .ripple-one{width:430px;height:560px;left:-150px;top:105px;background:radial-gradient(circle,rgba(0,99,232,.9) 0%,rgba(27,133,255,.58) 38%,rgba(70,171,255,.14) 67%,transparent 76%);animation:glow-float-left 12s ease-in-out infinite}
+.hero .ripple-two{width:470px;height:440px;right:-130px;top:-80px;background:radial-gradient(circle,rgba(0,74,211,.88) 0%,rgba(28,127,247,.55) 41%,rgba(95,188,255,.12) 68%,transparent 78%);animation:glow-float-right 15s ease-in-out infinite}
+.hero .ripple-three{width:620px;height:190px;left:5%;top:auto;bottom:-82px;background:radial-gradient(ellipse,rgba(5,95,232,.72),rgba(50,151,255,.31) 48%,transparent 74%);animation:glow-sweep-bottom 14s ease-in-out infinite}
+.hero:after{z-index:2}.hero-content{z-index:3}.hero .site-header{z-index:10}
+@media(max-width:640px){.hero .ripple{filter:blur(45px)}.hero .ripple-one{width:260px;height:430px;left:-145px}.hero .ripple-two{width:280px;height:340px;right:-135px}.hero .ripple-three{width:360px;height:150px;left:-40px}}
+@media(prefers-reduced-motion:reduce){.hero .ripple{animation:none!important}}
