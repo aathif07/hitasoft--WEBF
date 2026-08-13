@@ -49,16 +49,6 @@ export default function Home() {
           <h1>Engineering intelligence<br />for <span>real-world systems.</span></h1>
           <p className="hero-copy">Hitasoft builds secure AI platforms, adaptive software, and resilient cloud systems—from first model to production-scale intelligence.</p>
 
-          <div className="hero-tech-panel" aria-label="Hitasoft AI system capabilities">
-            <div className="tech-panel-head"><span><i /> SYSTEM ONLINE</span><code>HITASOFT / AI CORE</code></div>
-            <div className="tech-metrics">
-              <div><small>Inference pipeline</small><b>18ms</b><span>optimized</span></div>
-              <div><small>System availability</small><b>99.99%</b><span>observable</span></div>
-              <div><small>Security posture</small><b>A+</b><span>zero trust</span></div>
-            </div>
-            <div className="tech-command"><span>›</span><code>deploy.intelligence(&#123; scalable: true, secure: true &#125;)</code><i /></div>
-            <div className="tech-tags"><span>AI Agents</span><span>RAG</span><span>MLOps</span><span>Cloud Native</span><span>Data Systems</span></div>
-          </div>
 
         </div>
       </section>
