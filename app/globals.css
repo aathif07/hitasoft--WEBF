@@ -42,3 +42,13 @@ html{scroll-padding-top:76px}.section,.hero,.logo-strip{scroll-margin-top:76px}.
 .hero{min-height:620px;padding-bottom:82px}
 @media(max-width:900px){.hero{min-height:610px;padding-bottom:72px}}
 @media(max-width:640px){.hero{min-height:590px;padding-bottom:64px}}
+
+/* Soft spectrum hero inspired by the supplied Sequence reference. */
+@keyframes spectrum-drift{0%,100%{transform:translate3d(-1.5%,0,0) scale(1.03);opacity:.52}50%{transform:translate3d(1.5%,-1%,0) scale(1.07);opacity:.72}}
+.hero{width:calc(100% - 24px);min-height:610px;margin:12px auto 0;padding-top:72px;padding-bottom:76px;border:1px solid rgba(160,176,202,.24);border-radius:30px;overflow:hidden;background:radial-gradient(ellipse 42% 95% at -4% 48%,rgba(38,157,255,.54) 0%,rgba(91,185,255,.25) 32%,transparent 71%),radial-gradient(ellipse 39% 78% at 104% 8%,rgba(41,139,247,.56) 0%,rgba(93,178,255,.22) 37%,transparent 72%),radial-gradient(ellipse 30% 55% at 0% 102%,rgba(85,166,255,.3) 0%,transparent 72%),linear-gradient(115deg,#f9fdff 0%,#fff 42%,#fbfdff 68%,#eef7ff 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 16px 48px rgba(34,85,140,.07)}
+.hero:before{content:"";display:block;position:absolute;inset:-18%;background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(80,171,255,.22) 48px 69px,rgba(255,255,255,.5) 74px 92px,transparent 98px 142px);filter:blur(18px);mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.72) 25%,transparent 47%,transparent 61%,rgba(0,0,0,.6) 79%,#000 100%);opacity:.58;animation:spectrum-drift 15s ease-in-out infinite;pointer-events:none}
+.hero:after{content:"";display:block;position:absolute;inset:0;background:radial-gradient(ellipse 56% 58% at 50% 43%,rgba(255,255,255,.97) 0%,rgba(255,255,255,.84) 44%,transparent 79%);pointer-events:none}
+.hero-content{position:relative;z-index:3}.hero .ripple{display:none}.hero h1{color:#131927}.hero h1 span{color:#2142e7}.hero-copy{color:#566174}.announcement{background:rgba(255,255,255,.78);border:1px solid rgba(157,176,204,.32);box-shadow:0 8px 28px rgba(54,98,145,.08);backdrop-filter:blur(12px)}
+@media(max-width:900px){.hero{min-height:600px;padding-top:62px;padding-bottom:68px;border-radius:26px}}
+@media(max-width:640px){.hero{width:calc(100% - 16px);min-height:560px;margin-top:8px;padding:54px 14px 58px;border-radius:22px}.hero:before{inset:-24%;opacity:.46}.hero:after{background:radial-gradient(ellipse 76% 60% at 50% 43%,rgba(255,255,255,.97),rgba(255,255,255,.82) 48%,transparent 82%)}}
+@media(prefers-reduced-motion:reduce){.hero:before{animation:none!important}}
