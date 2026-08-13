@@ -14,3 +14,8 @@
 .hero{min-height:650px;padding-bottom:88px}.hero:after{bottom:-390px}.hero .form-note{margin-bottom:0}
 @media(max-width:900px){.hero{min-height:620px;padding-bottom:76px}}
 @media(max-width:640px){.hero{min-height:600px;padding-bottom:64px}}
+@keyframes hero-gradient-drift{0%,100%{background-position:50% 15%}35%{background-position:38% 28%}70%{background-position:64% 20%}}
+@keyframes hero-aurora{0%,100%{transform:translate3d(-4%,-2%,0) scale(1);opacity:.58}45%{transform:translate3d(5%,3%,0) scale(1.08);opacity:.82}75%{transform:translate3d(1%,-4%,0) scale(.96);opacity:.68}}
+@keyframes ripple-float{0%,100%{transform:translate3d(0,0,0) rotate(var(--ripple-rotate)) scale(1)}50%{transform:translate3d(var(--ripple-x),var(--ripple-y),0) rotate(calc(var(--ripple-rotate) + 3deg)) scale(1.035)}}
+.hero{background-size:160% 160%;animation:hero-gradient-drift 16s ease-in-out infinite}.hero:before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle at 22% 58%,rgba(33,66,231,.42),transparent 27%),radial-gradient(circle at 78% 38%,rgba(104,128,255,.44),transparent 30%),radial-gradient(circle at 52% 15%,rgba(255,255,255,.9),transparent 28%);filter:blur(34px);animation:hero-aurora 20s ease-in-out infinite;pointer-events:none}.ripple{will-change:transform;animation:ripple-float 14s ease-in-out infinite}.ripple-one{--ripple-rotate:12deg;--ripple-x:34px;--ripple-y:-18px}.ripple-two{--ripple-rotate:-18deg;--ripple-x:-42px;--ripple-y:24px;animation-duration:18s;animation-delay:-6s}.ripple-three{--ripple-rotate:6deg;--ripple-x:22px;--ripple-y:28px;animation-duration:12s;animation-delay:-3s}
+@media(prefers-reduced-motion:reduce){.hero,.hero:before,.ripple{animation:none!important}}
