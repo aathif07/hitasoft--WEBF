@@ -110,7 +110,7 @@ export default function Home() {
           <p>From strategy to deployment, we deliver reliable solutions that scale with your business and adapt to tomorrow’s challenges.</p>
         </div>
         <div className="services-grid">
-          {services.map(([number, title, description]) => <article className="service-card" key={title}><div className="service-number">{number}</div><h3>{title}</h3><p>{description}</p><a href="#create" aria-label={`Discuss ${title}`}>Explore service <Arrow /></a></article>)}
+          {services.map(([number, title, description]) => <article className="service-card" key={title}><div className="service-number">{number}</div><h3>{title}</h3><p>{description}</p><a href={`mailto:hello@hitasoft.com?subject=${encodeURIComponent(`Project enquiry: ${title}`)}`} aria-label={`Discuss ${title} with Hitasoft`}>Discuss this service <Arrow /></a></article>)}
         </div>
       </section>
 
