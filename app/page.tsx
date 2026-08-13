@@ -14,6 +14,47 @@ const services = [
   { number: "09", label: "Productivity", title: "AI Copilot Solutions", description: "Equip teams with role-aware copilots for knowledge search, workflow assistance, recommendations, and faster decisions.", outcomes: ["Role-aware copilots", "Knowledge intelligence"] },
 ];
 
+const navMenus = [
+  { label: "Hitasoft AI", href: "#solutions", heading: "Enterprise intelligence, engineered for production.", columns: [
+    { title: "AI services", items: ["AI consulting", "AI development", "AI integration", "AI governance"] },
+    { title: "Generative AI", items: ["Generative AI", "AI agents", "Enterprise RAG", "AI copilots"] },
+    { title: "Applied intelligence", items: ["Machine learning", "Computer vision", "Voice AI", "Intelligent automation"] },
+  ] },
+  { label: "About", href: "#about", heading: "A senior technology team built around outcomes.", columns: [
+    { title: "Company", items: ["About Hitasoft", "How we work", "Leadership", "Careers"] },
+    { title: "Confidence", items: ["Client stories", "Engineering principles", "Security", "Compliance"] },
+  ] },
+  { label: "Services", href: "#platform", heading: "Complete digital engineering across the product lifecycle.", columns: [
+    { title: "Build", items: ["Product engineering", "Web development", "Mobile development", "Enterprise software"] },
+    { title: "Transform", items: ["Product design", "Cloud modernization", "DevOps & QA", "System integration"] },
+    { title: "Operate", items: ["Cybersecurity", "Data & analytics", "Managed IT", "Dedicated teams"] },
+  ] },
+  { label: "Industries", href: "#industries", heading: "Technology shaped around real operating environments.", columns: [
+    { title: "Regulated", items: ["Healthcare", "Financial services", "Insurance", "Energy"] },
+    { title: "Connected", items: ["Logistics", "Automotive", "Manufacturing", "Telecom"] },
+    { title: "Experience-led", items: ["Retail & commerce", "Education", "Travel", "Media"] },
+  ] },
+  { label: "Portfolio", href: "#about", heading: "Selected systems designed to perform and evolve.", columns: [
+    { title: "Work", items: ["AI platforms", "Enterprise products", "Mobile experiences", "Cloud transformation"] },
+    { title: "Outcomes", items: ["Product launches", "Workflow automation", "Data intelligence", "Platform modernization"] },
+  ] },
+  { label: "Resources", href: "#resources", heading: "Practical thinking for technology leaders.", columns: [
+    { title: "Explore", items: ["AI insights", "Engineering guides", "Technology briefs", "FAQs"] },
+    { title: "Connect", items: ["Project discovery", "Architecture review", "AI readiness", "Contact our team"] },
+  ] },
+];
+
+const industries = [
+  ["01", "Healthcare", "Compliant platforms, clinical workflows, patient experiences, and decision-support systems built for trusted care."],
+  ["02", "Financial Services", "Secure banking, payments, risk, lending, and intelligence platforms designed for regulated growth."],
+  ["03", "Logistics & Supply Chain", "Predictive operations, fleet visibility, warehouse automation, and connected supply-chain systems."],
+  ["04", "Retail & Commerce", "Unified commerce, personalization, inventory intelligence, and digital experiences that convert."],
+  ["05", "Manufacturing", "Industry 4.0 platforms, computer vision, predictive maintenance, and real-time production intelligence."],
+  ["06", "Automotive & Mobility", "Connected mobility products, operational platforms, and intelligent systems across the vehicle lifecycle."],
+  ["07", "Education", "Adaptive learning, content intelligence, administrative automation, and accessible digital learning products."],
+  ["08", "Travel & Hospitality", "Booking ecosystems, intelligent assistance, operations software, and seamless guest experiences."],
+];
+
 export default function Home() {
   return (
     <main>
@@ -25,12 +66,17 @@ export default function Home() {
               <span>Hitasoft</span>
             </a>
             <div className="nav-links">
-              <a href="#top">Hitasoft AI <span>⌄</span></a>
-              <a href="#resources">About <span>⌄</span></a>
-              <a href="#solutions">Services <span>⌄</span></a>
-              <a href="#platform">Industries <span>⌄</span></a>
-              <a href="#resources">Portfolio <span>⌄</span></a>
-              <a href="#pricing">Resources <span>⌄</span></a>
+              {navMenus.map((menu) => (
+                <div className="nav-item" key={menu.label}>
+                  <a href={menu.href}>{menu.label} <span>⌄</span></a>
+                  <div className="mega-menu">
+                    <div className="mega-intro"><small>HITASOFT</small><strong>{menu.heading}</strong><a href={menu.href}>Explore {menu.label} <Arrow /></a></div>
+                    <div className="mega-columns">
+                      {menu.columns.map((column) => <div key={column.title}><b>{column.title}</b>{column.items.map((item) => <a href={menu.href} key={item}>{item}<span>→</span></a>)}</div>)}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
             <div className="nav-actions">
               <a className="button button-ghost nav-sales" href="#resources">Principles</a>
@@ -59,7 +105,7 @@ export default function Home() {
         <div><b>Strategy</b><b>Design</b><b>Build</b><b>Cloud</b><b>Security</b><b>Scale</b></div>
       </section>
 
-      <section className="impact-section" aria-labelledby="impact-title">
+      <section className="impact-section" id="about" aria-labelledby="impact-title">
         <div className="impact-intro">
           <h2 id="impact-title">We help ambitious companies turn complex technology into <span>clear, useful, and lasting products.</span></h2>
           <p>Making technology matter</p>
@@ -135,6 +181,16 @@ export default function Home() {
             <span>How we deliver</span>
             <div><b>Discover</b><i>→</i><b>Design</b><i>→</i><b>Build</b><i>→</i><b>Integrate</b><i>→</i><b>Operate</b></div>
           </div>
+        </div>
+      </section>
+
+      <section className="industries-section" id="industries">
+        <div className="industries-head">
+          <div><p className="eyebrow">Industry-focused engineering</p><h2>Built for the realities<br />of your industry.</h2></div>
+          <p>Deep technology capability matters most when it understands the environment around it. Hitasoft combines engineering discipline with domain-aware workflows, security, compliance, and customer expectations.</p>
+        </div>
+        <div className="industries-grid">
+          {industries.map(([number, title, description]) => <article key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p><a href="mailto:hello@hitasoft.com" aria-label={`Discuss ${title} solutions`}>Discuss your project <Arrow /></a></article>)}
         </div>
       </section>
 
