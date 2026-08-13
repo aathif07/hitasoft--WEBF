@@ -6,8 +6,6 @@ const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
   <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>
 );
 
-const Check = () => <span className="check" aria-hidden="true">✓</span>;
-
 const services = [
   ["01", "Website Development", "Build fast, secure, and scalable websites engineered to deliver seamless user experiences and measurable business growth."],
   ["02", "Artificial Intelligence Solutions", "Use AI-powered systems to automate processes, uncover insights, and enable better data-driven decisions."],
@@ -21,7 +19,6 @@ const services = [
 ];
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState("Software");
   const [url, setUrl] = useState("");
   const [message, setMessage] = useState("");
 
@@ -80,30 +77,31 @@ export default function Home() {
       </section>
 
       <section className="section intro-section" id="platform">
-        <div className="section-heading">
-          <p className="eyebrow">End-to-end IT solutions</p>
-          <h2>Technology services<br />designed for your growth.</h2>
-          <p>We deliver innovative, scalable, and reliable IT solutions that help businesses operate smarter, grow faster, and stay competitive in a rapidly evolving digital world.</p>
-        </div>
-        <div className="pill-tabs" role="tablist" aria-label="Core service areas">
-          {["Software", "Cloud", "Security", "Integration"].map((tab) => (
-            <button key={tab} role="tab" aria-selected={activeTab === tab} className={activeTab === tab ? "active" : ""} onClick={() => setActiveTab(tab)}>{tab}</button>
-          ))}
-        </div>
-        <div className="feature-panel">
-          <div className="feature-copy">
-            <span className="step-number">01</span>
-            <h3>{activeTab} built around your goals.</h3>
-            <p>{activeTab === "Software" ? "We design and build scalable, high-performance software tailored to your business goals—enabling flexibility, efficiency, and long-term growth." : activeTab === "Cloud" ? "Transform your operations with secure, scalable cloud architecture that improves performance while reducing operational complexity." : activeTab === "Security" ? "Protect your digital assets with advanced security frameworks, proactive monitoring, and compliance-driven strategies." : "Connect your platforms, tools, and data into a unified ecosystem that improves collaboration and operational efficiency."}</p>
-            <div className="check-grid"><span><Check />Scalable architecture</span><span><Check />Reliable delivery</span><span><Check />Security by design</span><span><Check />Long-term support</span></div>
-            <a className="inline-link" href="#create">Discuss your project <Arrow /></a>
-          </div>
-          <div className="feature-visual">
-            <div className="editor-shell">
-              <div className="editor-top"><span>Hitasoft delivery workspace</span><div><button>Review</button><button>Deploy</button></div></div>
-              <div className="editor-body"><aside><b>Stages</b>{[1,2,3,4].map(n => <div className={n === 2 ? "selected" : ""} key={n}><i>{n}</i><span /></div>)}</aside><div className="editor-preview"><div className="preview-nav"><i /><i /><i /></div><div className="preview-card"><small>PRODUCTION READINESS</small><h4>Built to perform under pressure.</h4><p>Architecture, security, and monitoring aligned for launch.</p><button>View report</button></div><span className="pulse-dot" /></div></div>
-            </div>
-          </div>
+        <div className="service-mosaic">
+          <article className="mosaic-intro">
+            <div><p className="eyebrow">End-to-end IT solutions</p><h2>Technology services<br />designed for your growth.</h2></div>
+            <p>We deliver innovative, scalable, and reliable IT solutions that help businesses operate smarter, grow faster, and stay competitive in a rapidly evolving digital world.</p>
+          </article>
+          <article className="mosaic-card mosaic-software">
+            <div className="mosaic-topline"><span className="mosaic-icon">H</span><span>SOFTWARE</span></div>
+            <div className="software-mark"><i /><i /><i /></div>
+            <div><h3>Custom software built to scale with you.</h3><p>High-performance systems tailored to your workflows, customers, and long-term business goals.</p><a href="#create">Explore software <Arrow /></a></div>
+          </article>
+          <article className="mosaic-card mosaic-cloud">
+            <div className="mosaic-topline"><span className="mosaic-icon">☁</span><span>CLOUD</span></div>
+            <div className="cloud-visual"><span>99.99%</span><small>Infrastructure availability</small><div>{[38,55,47,72,66,90,78].map((height,index)=><i key={index} style={{height:`${height}%`}} />)}</div></div>
+            <h3>Cloud infrastructure that performs under pressure.</h3><a href="#create">Explore cloud <Arrow /></a>
+          </article>
+          <article className="mosaic-card mosaic-security">
+            <div className="mosaic-topline"><span className="mosaic-icon">◇</span><span>SECURITY</span></div>
+            <div className="security-orbit"><i /><i /><i /><b>✓</b></div>
+            <h3>Protection designed into every layer.</h3><a href="#create">Explore security <Arrow /></a>
+          </article>
+          <article className="mosaic-card mosaic-integration">
+            <div className="mosaic-topline"><span className="mosaic-icon">⌁</span><span>INTEGRATION</span></div>
+            <div className="integration-map"><i /><i /><i /><i /><span /><span /><span /></div>
+            <h3>One connected technology ecosystem.</h3><a href="#create">Explore integration <Arrow /></a>
+          </article>
         </div>
       </section>
 
