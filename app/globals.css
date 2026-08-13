@@ -31,3 +31,4 @@
 .hero:before{background:none;animation:none}.ripple{border-color:rgba(255,255,255,.36);filter:blur(.15px)}.ripple-one{animation-duration:24s}.ripple-two{animation-duration:30s}.ripple-three{animation-duration:21s;opacity:.32}
 .ripple-one{animation-duration:19s}.ripple-two{animation-duration:24s}.ripple-three{animation-duration:17s;opacity:.36}
 .mosaic-security,.mosaic-integration{justify-content:flex-start}.mosaic-security h3,.mosaic-integration h3{margin-top:auto;margin-bottom:12px;max-width:240px}.mosaic-security a,.mosaic-integration a{margin-top:0}
+.service-card p{margin-bottom:0}
