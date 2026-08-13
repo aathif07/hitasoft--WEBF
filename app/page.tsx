@@ -8,8 +8,6 @@ const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
 
 const Check = () => <span className="check" aria-hidden="true">✓</span>;
 
-const PlayIcon = () => <span className="play-icon" aria-hidden="true">▶</span>;
-
 const services = [
   ["01", "Website Development", "Build fast, secure, and scalable websites engineered to deliver seamless user experiences and measurable business growth."],
   ["02", "Artificial Intelligence Solutions", "Use AI-powered systems to automate processes, uncover insights, and enable better data-driven decisions."],
@@ -79,38 +77,6 @@ export default function Home() {
           </form>
           <p className="form-note" aria-live="polite">{message || "A focused engineering team · Clear delivery from day one"}</p>
 
-          <div className="hero-demo-wrap">
-            <div className="float-card float-left">
-              <span className="mini-icon">✦</span>
-              <div><b>Production ready</b><small>Engineered to scale</small></div>
-            </div>
-            <div className="browser-frame">
-              <div className="browser-bar">
-                <div className="window-dots"><i /><i /><i /></div>
-                <div className="browser-address"><span>⌁</span> console.hitasoft.com/project-health</div>
-                <div className="browser-more">•••</div>
-              </div>
-              <div className="demo-screen">
-                <aside className="demo-sidebar">
-                  <div className="demo-logo"><span className="brand-mark small"><i /><i /><i /></span></div>
-                  <button className="side-active">⌂</button><button>▦</button><button>◫</button><button>◇</button>
-                  <div className="side-bottom">⚙</div>
-                </aside>
-                <div className="demo-main">
-                  <div className="demo-top"><div><small>Delivery / Production</small><b>Project health dashboard</b></div><button>Deploy</button></div>
-                  <div className="demo-canvas">
-                    <div className="canvas-head"><span>PROJECT OVERVIEW</span><button>+ Add view</button></div>
-                    <h3>From prototype uncertainty<br />to production confidence.</h3>
-                    <div className="mini-stats"><div><small>Release score</small><b>73/100</b><em>↑ Stable</em></div><div><small>Systems online</small><b>24</b><em>100% uptime</em></div><div><small>Delivery velocity</small><b>94%</b><em>↑ 8%</em></div></div>
-                    <div className="chart-card"><div className="chart-head"><b>Infrastructure performance</b><span>Last 30 days⌄</span></div><div className="chart-bars">{[34,52,44,70,62,82,72,93,85,100,92,110].map((height, index) => <i key={index} style={{height}} />)}</div></div>
-                    <button className="hotspot"><PlayIcon /></button>
-                    <div className="tooltip-card"><b>Production confidence</b><p>Monitor performance, security, and delivery in one place.</p><span>Live <strong>View report →</strong></span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="float-card metric-float"><span className="trend">↗</span><div><b>Faster time to market</b><small>Prototype to production</small></div></div>
-          </div>
         </div>
       </section>
 
