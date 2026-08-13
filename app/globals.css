@@ -134,3 +134,11 @@ html{scroll-padding-top:76px}.section,.hero,.logo-strip{scroll-margin-top:76px}.
 .impact-section{max-width:1480px;padding-left:18px;padding-right:18px}.impact-card{min-height:650px}.impact-intro,.evolution-row{max-width:1320px;margin-left:auto;margin-right:auto}
 @media(max-width:900px){.impact-section{padding-left:18px;padding-right:18px}.impact-card{min-height:670px}}
 @media(max-width:640px){.impact-section{padding-left:10px;padding-right:10px}.impact-card{min-height:720px}}
+
+/* Textured spectrum finish for the impact card. */
+@keyframes impact-texture-drift{0%,100%{background-position:0 0,0 0,0% 50%}50%{background-position:46px -28px,-34px 36px,100% 50%}}
+.impact-card{background-image:radial-gradient(circle at 18% 22%,rgba(255,255,255,.72) 0 1px,transparent 1.7px),radial-gradient(circle at 72% 68%,rgba(29,92,177,.24) 0 1px,transparent 1.8px),radial-gradient(ellipse 62% 112% at -7% 58%,rgba(30,128,244,.9) 0%,rgba(79,163,255,.55) 34%,rgba(177,222,255,.2) 61%,transparent 76%),radial-gradient(ellipse 44% 82% at 106% -7%,rgba(44,143,255,.5) 0%,rgba(148,211,255,.17) 54%,transparent 76%),linear-gradient(112deg,#dcefff 0%,#f5fbff 39%,#fff 67%,#e7f5ff 100%);background-size:145px 145px,190px 190px,118% 118%,120% 120%,100% 100%;background-blend-mode:soft-light,multiply,normal,normal,normal;animation:impact-texture-drift 22s ease-in-out infinite;box-shadow:0 30px 90px rgba(33,100,181,.2),inset 0 1px rgba(255,255,255,.92),inset 0 -70px 120px rgba(45,132,244,.08)}
+.impact-card:before{inset:-20%;background:repeating-linear-gradient(92deg,transparent 0 42px,rgba(45,145,247,.22) 48px 73px,rgba(255,255,255,.58) 80px 96px,transparent 104px 154px);filter:blur(22px);opacity:.72;mix-blend-mode:soft-light}
+.impact-card:after{height:130px;bottom:38px;background:linear-gradient(180deg,transparent 0%,rgba(93,174,255,.16) 30%,rgba(255,255,255,.7) 50%,rgba(55,143,248,.18) 58%,transparent 82%);filter:blur(14px)}
+.impact-arc.one{box-shadow:inset 44px 0 65px rgba(39,119,230,.1),0 0 80px rgba(69,153,255,.07)}
+@media(prefers-reduced-motion:reduce){.impact-card{animation:none!important}}
