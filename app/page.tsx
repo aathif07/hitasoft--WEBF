@@ -3,15 +3,15 @@ const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
 );
 
 const services = [
-  ["01", "Website Development", "Build fast, secure, and scalable websites engineered to deliver seamless user experiences and measurable business growth."],
-  ["02", "Artificial Intelligence Solutions", "Use AI-powered systems to automate processes, uncover insights, and enable better data-driven decisions."],
-  ["03", "Mobile Application Development", "Design and develop high-performance mobile apps that engage users, streamline operations, and scale with your business."],
-  ["04", "Cloud Infrastructure Solutions", "Deploy secure, scalable cloud environments that improve flexibility, optimize costs, and support rapid growth."],
-  ["05", "Custom Software Development", "Create software tailored to your workflows—improving efficiency, automation, flexibility, and long-term productivity."],
-  ["06", "Cybersecurity Services", "Safeguard your digital ecosystem with advanced security frameworks, proactive threat monitoring, and risk mitigation."],
-  ["07", "Data Analytics", "Transform raw data into actionable intelligence that drives strategic planning and competitive advantage."],
-  ["08", "UI/UX Design", "Craft intuitive, visually compelling interfaces that elevate user satisfaction and strengthen brand perception."],
-  ["09", "Server Maintenance & Development", "Ensure maximum uptime and performance with reliable server management, monitoring, and continuous optimization."],
+  ["01", "AI Consulting", "Identify high-value AI opportunities, assess data readiness, and define a practical roadmap for responsible adoption."],
+  ["02", "AI Product Engineering", "Engineer complete AI products—from architecture and model development to deployment, monitoring, and scale."],
+  ["03", "Generative AI Development", "Build secure LLM, multimodal, fine-tuned, and retrieval-augmented applications around your enterprise knowledge."],
+  ["04", "AI Agent Development", "Create context-aware agents that automate multi-step work, coordinate tools, and support real-time decisions."],
+  ["05", "AI Assistants & Chatbots", "Develop conversational systems that understand intent, context, and sentiment across customer and internal workflows."],
+  ["06", "Enterprise AI Integration", "Connect intelligent capabilities to existing software, data, and operations without disrupting critical business systems."],
+  ["07", "AI Cybersecurity", "Protect AI environments with anomaly detection, pipeline monitoring, risk controls, and compliance-focused safeguards."],
+  ["08", "AIOps", "Use operational intelligence to reduce alert noise, predict incidents, automate monitoring, and accelerate root-cause analysis."],
+  ["09", "AI Copilot Solutions", "Equip teams with role-aware copilots for knowledge search, workflow assistance, recommendations, and faster decisions."],
 ];
 
 export default function Home() {
@@ -25,10 +25,12 @@ export default function Home() {
               <span>Hitasoft</span>
             </a>
             <div className="nav-links">
-              <a href="#platform">AI systems</a>
-              <a href="#solutions">Capabilities <span>⌄</span></a>
-              <a href="#resources">Engineering</a>
-              <a href="#pricing">Approach</a>
+              <a href="#top">Hitasoft AI <span>⌄</span></a>
+              <a href="#resources">About <span>⌄</span></a>
+              <a href="#solutions">Services <span>⌄</span></a>
+              <a href="#platform">Industries <span>⌄</span></a>
+              <a href="#resources">Portfolio <span>⌄</span></a>
+              <a href="#pricing">Resources <span>⌄</span></a>
             </div>
             <div className="nav-actions">
               <a className="button button-ghost nav-sales" href="#resources">Principles</a>
@@ -109,9 +111,9 @@ export default function Home() {
 
       <section className="section alternate" id="solutions">
         <div className="section-heading compact">
-          <p className="eyebrow">Engineering capabilities</p>
-          <h2>One team. Every layer of the system.</h2>
-          <p>From AI and data to cloud, interfaces, and security, we engineer the complete technical stack for dependable digital products.</p>
+          <p className="eyebrow">End-to-end AI development services</p>
+          <h2>Enterprise AI, from strategy to scale.</h2>
+          <p>We combine product engineering, data, models, integrations, security, and operations to deliver resilient AI systems across complex business environments.</p>
         </div>
         <div className="services-grid">
           {services.map(([number, title, description]) => <article className="service-card" key={title}><div className="service-number">{number}</div><h3>{title}</h3><p>{description}</p></article>)}
