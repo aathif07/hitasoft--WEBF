@@ -21,7 +21,6 @@ const services = [
 ];
 
 export default function Home() {
-  const [mode, setMode] = useState<"demo" | "video">("demo");
   const [activeTab, setActiveTab] = useState("Software");
   const [url, setUrl] = useState("");
   const [message, setMessage] = useState("");
@@ -64,11 +63,6 @@ export default function Home() {
           <p className="eyebrow">What we do</p>
           <h1>Unlock the power of<br /><span>young innovators.</span></h1>
           <p className="hero-copy">Accelerate your journey from prototype to production. From early technical errors to production-critical challenges, Hitasoft ensures seamless execution at every stage.</p>
-
-          <div className="mode-switch" role="group" aria-label="Choose project stage">
-            <button className={mode === "demo" ? "active" : ""} onClick={() => setMode("demo")}><span>◫</span> Prototype support</button>
-            <button className={mode === "video" ? "active" : ""} onClick={() => setMode("video")}><span>▷</span> Production scale</button>
-          </div>
 
           <form className="url-form" id="create" onSubmit={submitUrl}>
             <label className="sr-only" htmlFor="product-url">Work email</label>
