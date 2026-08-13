@@ -3,15 +3,15 @@ const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
 );
 
 const services = [
-  ["01", "AI Consulting", "Identify high-value AI opportunities, assess data readiness, and define a practical roadmap for responsible adoption."],
-  ["02", "AI Product Engineering", "Engineer complete AI products—from architecture and model development to deployment, monitoring, and scale."],
-  ["03", "Generative AI Development", "Build secure LLM, multimodal, fine-tuned, and retrieval-augmented applications around your enterprise knowledge."],
-  ["04", "AI Agent Development", "Create context-aware agents that automate multi-step work, coordinate tools, and support real-time decisions."],
-  ["05", "AI Assistants & Chatbots", "Develop conversational systems that understand intent, context, and sentiment across customer and internal workflows."],
-  ["06", "Enterprise AI Integration", "Connect intelligent capabilities to existing software, data, and operations without disrupting critical business systems."],
-  ["07", "AI Cybersecurity", "Protect AI environments with anomaly detection, pipeline monitoring, risk controls, and compliance-focused safeguards."],
-  ["08", "AIOps", "Use operational intelligence to reduce alert noise, predict incidents, automate monitoring, and accelerate root-cause analysis."],
-  ["09", "AI Copilot Solutions", "Equip teams with role-aware copilots for knowledge search, workflow assistance, recommendations, and faster decisions."],
+  { number: "01", label: "Strategy", title: "AI Consulting", description: "Identify high-value AI opportunities, assess data readiness, and define a practical roadmap for responsible adoption.", outcomes: ["Use-case discovery", "AI readiness roadmap"] },
+  { number: "02", label: "Product", title: "AI Product Engineering", description: "Engineer complete AI products—from architecture and model development to deployment, monitoring, and scale.", outcomes: ["Product architecture", "Production deployment"] },
+  { number: "03", label: "Generative AI", title: "Generative AI Development", description: "Build secure LLM, multimodal, fine-tuned, and retrieval-augmented applications around your enterprise knowledge.", outcomes: ["Enterprise RAG", "Custom model workflows"] },
+  { number: "04", label: "Automation", title: "AI Agent Development", description: "Create context-aware agents that automate multi-step work, coordinate tools, and support real-time decisions.", outcomes: ["Agentic workflows", "Tool orchestration"] },
+  { number: "05", label: "Experience", title: "AI Assistants & Chatbots", description: "Develop conversational systems that understand intent, context, and sentiment across customer and internal workflows.", outcomes: ["Smart assistants", "Conversational interfaces"] },
+  { number: "06", label: "Integration", title: "Enterprise AI Integration", description: "Connect intelligent capabilities to existing software, data, and operations without disrupting critical business systems.", outcomes: ["System integration", "Data connectivity"] },
+  { number: "07", label: "Trust", title: "AI Cybersecurity", description: "Protect AI environments with anomaly detection, pipeline monitoring, risk controls, and compliance-focused safeguards.", outcomes: ["AI risk controls", "Continuous monitoring"] },
+  { number: "08", label: "Operations", title: "AIOps", description: "Use operational intelligence to reduce alert noise, predict incidents, automate monitoring, and accelerate root-cause analysis.", outcomes: ["Predictive operations", "Incident automation"] },
+  { number: "09", label: "Productivity", title: "AI Copilot Solutions", description: "Equip teams with role-aware copilots for knowledge search, workflow assistance, recommendations, and faster decisions.", outcomes: ["Role-aware copilots", "Knowledge intelligence"] },
 ];
 
 export default function Home() {
@@ -109,14 +109,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section alternate" id="solutions">
-        <div className="section-heading compact">
-          <p className="eyebrow">End-to-end AI development services</p>
-          <h2>Enterprise AI, from strategy to scale.</h2>
-          <p>We combine product engineering, data, models, integrations, security, and operations to deliver resilient AI systems across complex business environments.</p>
-        </div>
-        <div className="services-grid">
-          {services.map(([number, title, description]) => <article className="service-card" key={title}><div className="service-number">{number}</div><h3>{title}</h3><p>{description}</p></article>)}
+      <section className="section alternate ai-services-section" id="solutions">
+        <div className="ai-services-shell">
+          <div className="ai-services-head">
+            <div>
+              <p className="eyebrow">End-to-end AI development services</p>
+              <h2>Enterprise AI,<br /><span>from strategy to scale.</span></h2>
+            </div>
+            <div className="ai-services-intro">
+              <span>HITASOFT / AI PRACTICE</span>
+              <p>We combine strategy, product engineering, data, models, integrations, security, and operations to deliver resilient AI systems across complex business environments.</p>
+            </div>
+          </div>
+          <div className="services-grid">
+            {services.map((service) => (
+              <article className="service-card" key={service.title}>
+                <div className="service-meta"><span>{service.number}</span><small>{service.label}</small></div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <div className="service-outcomes">{service.outcomes.map((outcome) => <span key={outcome}>{outcome}</span>)}</div>
+              </article>
+            ))}
+          </div>
+          <div className="ai-delivery-band">
+            <span>How we deliver</span>
+            <div><b>Discover</b><i>→</i><b>Design</b><i>→</i><b>Build</b><i>→</i><b>Integrate</b><i>→</i><b>Operate</b></div>
+          </div>
         </div>
       </section>
 
