@@ -78,11 +78,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="nav-actions">
-              <a className="button button-ghost nav-sales" href="#resources">Principles</a>
-              <a className="button button-primary" href="mailto:hello@hitasoft.com">Start a project</a>
-            </div>
-            <a className="mobile-cta" href="#platform">Capabilities</a>
+            <a className="mobile-cta" href="mailto:hello@hitasoft.com">Contact</a>
           </nav>
         </header>
         <div className="ripple ripple-one" />
@@ -95,8 +91,10 @@ export default function Home() {
           <p className="eyebrow">Applied intelligence · production infrastructure</p>
           <h1>Engineering intelligence<br />for <span>real-world systems.</span></h1>
           <p className="hero-copy">Hitasoft builds secure AI platforms, adaptive software, and resilient cloud systems—from first model to production-scale intelligence.</p>
-
-
+          <div className="hero-actions">
+            <a className="hero-contact" href="mailto:hello@hitasoft.com">Talk to our team <Arrow /></a>
+            <a className="hero-explore" href="#solutions">Explore AI services</a>
+          </div>
         </div>
       </section>
 
