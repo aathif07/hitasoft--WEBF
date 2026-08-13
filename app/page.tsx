@@ -94,12 +94,10 @@ export default function Home() {
           </article>
           <article className="mosaic-card mosaic-security">
             <div className="mosaic-topline"><span className="mosaic-icon">◇</span><span>SECURITY</span></div>
-            <div className="security-orbit"><i /><i /><i /><b>✓</b></div>
             <h3>Protection designed into every layer.</h3><a href="#create">Explore security <Arrow /></a>
           </article>
           <article className="mosaic-card mosaic-integration">
             <div className="mosaic-topline"><span className="mosaic-icon">⌁</span><span>INTEGRATION</span></div>
-            <div className="integration-map"><i /><i /><i /><i /><span /><span /><span /></div>
             <h3>One connected technology ecosystem.</h3><a href="#create">Explore integration <Arrow /></a>
           </article>
         </div>
