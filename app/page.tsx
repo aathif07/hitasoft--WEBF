@@ -10,37 +10,48 @@ const Check = () => <span className="check" aria-hidden="true">✓</span>;
 
 const PlayIcon = () => <span className="play-icon" aria-hidden="true">▶</span>;
 
+const services = [
+  ["01", "Website Development", "Build fast, secure, and scalable websites engineered to deliver seamless user experiences and measurable business growth."],
+  ["02", "Artificial Intelligence Solutions", "Use AI-powered systems to automate processes, uncover insights, and enable better data-driven decisions."],
+  ["03", "Mobile Application Development", "Design and develop high-performance mobile apps that engage users, streamline operations, and scale with your business."],
+  ["04", "Cloud Infrastructure Solutions", "Deploy secure, scalable cloud environments that improve flexibility, optimize costs, and support rapid growth."],
+  ["05", "Custom Software Development", "Create software tailored to your workflows—improving efficiency, automation, flexibility, and long-term productivity."],
+  ["06", "Cybersecurity Services", "Safeguard your digital ecosystem with advanced security frameworks, proactive threat monitoring, and risk mitigation."],
+  ["07", "Data Analytics", "Transform raw data into actionable intelligence that drives strategic planning and competitive advantage."],
+  ["08", "UI/UX Design", "Craft intuitive, visually compelling interfaces that elevate user satisfaction and strengthen brand perception."],
+  ["09", "Server Maintenance & Development", "Ensure maximum uptime and performance with reliable server management, monitoring, and continuous optimization."],
+];
+
 export default function Home() {
   const [mode, setMode] = useState<"demo" | "video">("demo");
-  const [activeTab, setActiveTab] = useState("Create");
+  const [activeTab, setActiveTab] = useState("Software");
   const [url, setUrl] = useState("");
   const [message, setMessage] = useState("");
 
   function submitUrl(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setMessage(url.trim() ? "Your workspace is ready — let’s build your first Arcade." : "Paste a product link to get started.");
+    setMessage(url.trim() ? "Thank you — our team will get in touch to discuss your project." : "Enter your work email to start a conversation.");
   }
 
   return (
     <main>
       <header className="site-header">
         <nav className="nav-shell" aria-label="Primary navigation">
-          <a className="brand" href="#top" aria-label="Arcade home">
+          <a className="brand" href="#top" aria-label="Hitasoft home">
             <span className="brand-mark"><i /><i /><i /></span>
-            <span>Arcade</span>
+            <span>Hitasoft</span>
           </a>
           <div className="nav-links">
-            <a href="#platform">Platform <span>⌄</span></a>
-            <a href="#solutions">Solutions <span>⌄</span></a>
-            <a href="#resources">Resources <span>⌄</span></a>
-            <a href="#pricing">Pricing</a>
+            <a href="#platform">What we do</a>
+            <a href="#solutions">Services <span>⌄</span></a>
+            <a href="#resources">Why Hitasoft</a>
+            <a href="#pricing">Engagement</a>
           </div>
           <div className="nav-actions">
-            <a className="text-link" href="#login">Log in</a>
-            <a className="button button-ghost nav-sales" href="mailto:sales@arcade.so">Talk to sales</a>
-            <a className="button button-primary" href="#create">Start for free</a>
+            <a className="button button-ghost nav-sales" href="mailto:hello@hitasoft.com">Talk to our team</a>
+            <a className="button button-primary" href="#create">Start a project</a>
           </div>
-          <a className="mobile-cta" href="#create">Start free</a>
+          <a className="mobile-cta" href="#create">Start a project</a>
         </nav>
       </header>
 
@@ -50,33 +61,33 @@ export default function Home() {
         <div className="ripple ripple-three" />
         <div className="hero-content">
           <a className="announcement" href="#resources">
-            <strong>Meet Arcades for teams</strong><span /><em>Explore what’s new</em><Arrow />
+            <strong>Prototype to production</strong><span /><em>Built for ambitious teams</em><Arrow />
           </a>
-          <p className="eyebrow">Interactive product storytelling</p>
-          <h1>Show your product.<br />Make it <span>unforgettable.</span></h1>
-          <p className="hero-copy">Create interactive demos that explain your product in seconds — beautiful, personal, and built to convert.</p>
+          <p className="eyebrow">What we do</p>
+          <h1>Unlock the power of<br /><span>young innovators.</span></h1>
+          <p className="hero-copy">Accelerate your journey from prototype to production. From early technical errors to production-critical challenges, Hitasoft ensures seamless execution at every stage.</p>
 
-          <div className="mode-switch" role="group" aria-label="Choose content type">
-            <button className={mode === "demo" ? "active" : ""} onClick={() => setMode("demo")}><span>◫</span> Interactive demo</button>
-            <button className={mode === "video" ? "active" : ""} onClick={() => setMode("video")}><span>▷</span> Product video</button>
+          <div className="mode-switch" role="group" aria-label="Choose project stage">
+            <button className={mode === "demo" ? "active" : ""} onClick={() => setMode("demo")}><span>◫</span> Prototype support</button>
+            <button className={mode === "video" ? "active" : ""} onClick={() => setMode("video")}><span>▷</span> Production scale</button>
           </div>
 
           <form className="url-form" id="create" onSubmit={submitUrl}>
-            <label className="sr-only" htmlFor="product-url">Product URL</label>
-            <input id="product-url" value={url} onChange={(event) => setUrl(event.target.value)} placeholder={mode === "demo" ? "Paste your product URL" : "Paste a video or product URL"} />
-            <button aria-label="Create your Arcade" type="submit"><Arrow /></button>
+            <label className="sr-only" htmlFor="product-url">Work email</label>
+            <input id="product-url" type="email" value={url} onChange={(event) => setUrl(event.target.value)} placeholder="Enter your work email" />
+            <button aria-label="Start a conversation with Hitasoft" type="submit"><Arrow /></button>
           </form>
-          <p className="form-note" aria-live="polite">{message || "Free forever · No credit card required"}</p>
+          <p className="form-note" aria-live="polite">{message || "A focused engineering team · Clear delivery from day one"}</p>
 
           <div className="hero-demo-wrap">
             <div className="float-card float-left">
               <span className="mini-icon">✦</span>
-              <div><b>AI-powered</b><small>Built in moments</small></div>
+              <div><b>Production ready</b><small>Engineered to scale</small></div>
             </div>
             <div className="browser-frame">
               <div className="browser-bar">
                 <div className="window-dots"><i /><i /><i /></div>
-                <div className="browser-address"><span>⌁</span> arcade.software/share/product-tour</div>
+                <div className="browser-address"><span>⌁</span> console.hitasoft.com/project-health</div>
                 <div className="browser-more">•••</div>
               </div>
               <div className="demo-screen">
@@ -86,51 +97,51 @@ export default function Home() {
                   <div className="side-bottom">⚙</div>
                 </aside>
                 <div className="demo-main">
-                  <div className="demo-top"><div><small>Workspaces / Growth</small><b>Q3 product launch</b></div><button>Share</button></div>
+                  <div className="demo-top"><div><small>Delivery / Production</small><b>Project health dashboard</b></div><button>Deploy</button></div>
                   <div className="demo-canvas">
                     <div className="canvas-head"><span>PROJECT OVERVIEW</span><button>+ Add view</button></div>
-                    <h3>Everything your team needs,<br />in one clear view.</h3>
-                    <div className="mini-stats"><div><small>Active projects</small><b>24</b><em>↑ 12%</em></div><div><small>Tasks completed</small><b>1,842</b><em>↑ 18%</em></div><div><small>Team velocity</small><b>94%</b><em>↑ 8%</em></div></div>
-                    <div className="chart-card"><div className="chart-head"><b>Product adoption</b><span>Last 30 days⌄</span></div><div className="chart-bars">{[34,52,44,70,62,82,72,93,85,100,92,110].map((height, index) => <i key={index} style={{height}} />)}</div></div>
+                    <h3>From prototype uncertainty<br />to production confidence.</h3>
+                    <div className="mini-stats"><div><small>Release score</small><b>73/100</b><em>↑ Stable</em></div><div><small>Systems online</small><b>24</b><em>100% uptime</em></div><div><small>Delivery velocity</small><b>94%</b><em>↑ 8%</em></div></div>
+                    <div className="chart-card"><div className="chart-head"><b>Infrastructure performance</b><span>Last 30 days⌄</span></div><div className="chart-bars">{[34,52,44,70,62,82,72,93,85,100,92,110].map((height, index) => <i key={index} style={{height}} />)}</div></div>
                     <button className="hotspot"><PlayIcon /></button>
-                    <div className="tooltip-card"><b>Start with your overview</b><p>See your team’s progress at a glance.</p><span>1 of 4 <strong>Next →</strong></span></div>
+                    <div className="tooltip-card"><b>Production confidence</b><p>Monitor performance, security, and delivery in one place.</p><span>Live <strong>View report →</strong></span></div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="float-card metric-float"><span className="trend">↗</span><div><b>38% more signups</b><small>From one interactive demo</small></div></div>
+            <div className="float-card metric-float"><span className="trend">↗</span><div><b>Faster time to market</b><small>Prototype to production</small></div></div>
           </div>
         </div>
       </section>
 
       <section className="logo-strip" aria-label="Customer logos">
-        <p>Loved by modern teams at</p>
-        <div><b>Atlassian</b><b>Notion</b><b>Webflow</b><b>Zapier</b><b>Mercury</b><b>Dropbox</b></div>
+        <p>One technology partner across the full delivery lifecycle</p>
+        <div><b>Strategy</b><b>Design</b><b>Build</b><b>Cloud</b><b>Security</b><b>Scale</b></div>
       </section>
 
       <section className="section intro-section" id="platform">
         <div className="section-heading">
-          <p className="eyebrow">The platform</p>
-          <h2>Your product deserves<br />more than a screenshot.</h2>
-          <p>Build engaging, on-brand experiences that help every buyer understand the value — before they ever book a call.</p>
+          <p className="eyebrow">End-to-end IT solutions</p>
+          <h2>Technology services<br />designed for your growth.</h2>
+          <p>We deliver innovative, scalable, and reliable IT solutions that help businesses operate smarter, grow faster, and stay competitive in a rapidly evolving digital world.</p>
         </div>
-        <div className="pill-tabs" role="tablist" aria-label="Platform features">
-          {["Create", "Personalize", "Share", "Measure"].map((tab) => (
+        <div className="pill-tabs" role="tablist" aria-label="Core service areas">
+          {["Software", "Cloud", "Security", "Integration"].map((tab) => (
             <button key={tab} role="tab" aria-selected={activeTab === tab} className={activeTab === tab ? "active" : ""} onClick={() => setActiveTab(tab)}>{tab}</button>
           ))}
         </div>
         <div className="feature-panel">
           <div className="feature-copy">
             <span className="step-number">01</span>
-            <h3>{activeTab} in minutes, not days.</h3>
-            <p>{activeTab === "Create" ? "Capture your product as you click. Arcade automatically turns each step into a polished, guided story." : activeTab === "Personalize" ? "Adapt every story to the audience, account, or campaign without rebuilding your demo." : activeTab === "Share" ? "Publish everywhere your buyers are — from your website and emails to social and sales rooms." : "See exactly where viewers engage, hesitate, and convert so your next story performs even better."}</p>
-            <div className="check-grid"><span><Check />No-code editor</span><span><Check />Brand themes</span><span><Check />AI copy polish</span><span><Check />Instant publishing</span></div>
-            <a className="inline-link" href="#create">Start creating <Arrow /></a>
+            <h3>{activeTab} built around your goals.</h3>
+            <p>{activeTab === "Software" ? "We design and build scalable, high-performance software tailored to your business goals—enabling flexibility, efficiency, and long-term growth." : activeTab === "Cloud" ? "Transform your operations with secure, scalable cloud architecture that improves performance while reducing operational complexity." : activeTab === "Security" ? "Protect your digital assets with advanced security frameworks, proactive monitoring, and compliance-driven strategies." : "Connect your platforms, tools, and data into a unified ecosystem that improves collaboration and operational efficiency."}</p>
+            <div className="check-grid"><span><Check />Scalable architecture</span><span><Check />Reliable delivery</span><span><Check />Security by design</span><span><Check />Long-term support</span></div>
+            <a className="inline-link" href="#create">Discuss your project <Arrow /></a>
           </div>
           <div className="feature-visual">
             <div className="editor-shell">
-              <div className="editor-top"><span>My product tour</span><div><button>Preview</button><button>Publish</button></div></div>
-              <div className="editor-body"><aside><b>Steps</b>{[1,2,3,4].map(n => <div className={n === 2 ? "selected" : ""} key={n}><i>{n}</i><span /></div>)}</aside><div className="editor-preview"><div className="preview-nav"><i /><i /><i /></div><div className="preview-card"><small>STEP 2</small><h4>Guide attention with hotspots.</h4><p>Add context exactly where it matters.</p><button>Got it</button></div><span className="pulse-dot" /></div></div>
+              <div className="editor-top"><span>Hitasoft delivery workspace</span><div><button>Review</button><button>Deploy</button></div></div>
+              <div className="editor-body"><aside><b>Stages</b>{[1,2,3,4].map(n => <div className={n === 2 ? "selected" : ""} key={n}><i>{n}</i><span /></div>)}</aside><div className="editor-preview"><div className="preview-nav"><i /><i /><i /></div><div className="preview-card"><small>PRODUCTION READINESS</small><h4>Built to perform under pressure.</h4><p>Architecture, security, and monitoring aligned for launch.</p><button>View report</button></div><span className="pulse-dot" /></div></div>
             </div>
           </div>
         </div>
@@ -138,38 +149,36 @@ export default function Home() {
 
       <section className="section alternate" id="solutions">
         <div className="section-heading compact">
-          <p className="eyebrow">Built for every go-to-market team</p>
-          <h2>One product. A hundred stories.</h2>
-          <p>Give every team a better way to show, explain, and sell what you’ve built.</p>
+          <p className="eyebrow">Let’s see what we can do</p>
+          <h2>One team. Every technology challenge.</h2>
+          <p>From strategy to deployment, we deliver reliable solutions that scale with your business and adapt to tomorrow’s challenges.</p>
         </div>
-        <div className="use-case-grid">
-          <article className="use-card large"><div className="card-art sales-art"><div className="message m1"><i>MM</i><span><b>Maya Miller</b><small>Shared an Arcade with Acme</small></span></div><div className="message m2"><span className="play-badge">▶</span><span><b>See how your team can save 8 hours</b><small>Personalized for acme.co</small></span></div><div className="message m3"><span>Viewed 6 minutes ago</span><b>87% completed</b></div></div><span className="card-label">For sales</span><h3>Turn every follow-up into a product moment.</h3><p>Personalize demos for every prospect and let your product move deals forward.</p><a href="#create">Explore sales <Arrow /></a></article>
-          <article className="use-card"><div className="card-art marketing-art"><div className="campaign"><small>CAMPAIGN PERFORMANCE</small><b>12.4k</b><span>Interactive views</span><div className="sparkline"><i/><i/><i/><i/><i/><i/></div><em>+28.4%</em></div></div><span className="card-label">For marketing</span><h3>Make campaigns people want to click.</h3><p>Bring launches, websites, and social to life with immersive product stories.</p><a href="#create">Explore marketing <Arrow /></a></article>
-          <article className="use-card"><div className="card-art enablement-art"><div className="course-list"><div><span>01</span><b>Workspace basics</b><em>Complete</em></div><div className="current"><span>02</span><b>Build your first flow</b><em>6 min</em></div><div><span>03</span><b>Invite your team</b><em>4 min</em></div></div></div><span className="card-label">For enablement</span><h3>Teach once. Let people learn by doing.</h3><p>Replace long docs and training calls with guided, self-serve experiences.</p><a href="#create">Explore enablement <Arrow /></a></article>
+        <div className="services-grid">
+          {services.map(([number, title, description]) => <article className="service-card" key={title}><div className="service-number">{number}</div><h3>{title}</h3><p>{description}</p><a href="#create" aria-label={`Discuss ${title}`}>Explore service <Arrow /></a></article>)}
         </div>
       </section>
 
       <section className="section proof-section" id="resources">
         <div className="proof-grid">
-          <blockquote><span className="quote-mark">“</span><p>Arcade has fundamentally changed how we show our product. Our demos feel premium, our team ships faster, and buyers finally get it right away.</p><footer><div className="avatar">AL</div><div><b>Alex Lee</b><small>VP of Marketing, Daylight</small></div></footer></blockquote>
-          <div className="proof-stats"><div><b>3.2×</b><span>more engaged visitors</span></div><div><b>42%</b><span>shorter sales cycle</span></div><div><b>10 min</b><span>average time to publish</span></div><div><b>12k+</b><span>teams creating with Arcade</span></div></div>
+          <blockquote><span className="quote-mark">“</span><p>We work for passion, not only for money. Every engagement is approached with ownership, technical curiosity, and a commitment to delivering real business value.</p><footer><div className="avatar">HI</div><div><b>Hitasoft Engineering</b><small>Your technology partner from idea to scale</small></div></footer></blockquote>
+          <div className="proof-stats"><div><b>01</b><span>team from prototype to production</span></div><div><b>24/7</b><span>monitoring and dependable support</span></div><div><b>100%</b><span>solutions aligned to your goals</span></div><div><b>∞</b><span>built to adapt as you grow</span></div></div>
         </div>
       </section>
 
       <section className="section pricing-section" id="pricing">
         <div className="final-cta">
           <div className="cta-ripple one" /><div className="cta-ripple two" />
-          <p className="eyebrow light">Ready when you are</p>
-          <h2>Let your product<br />do the talking.</h2>
-          <p>Build your first interactive demo in minutes. Share it everywhere. See what clicks.</p>
-          <div className="cta-actions"><a className="button button-white" href="#create">Start creating for free <Arrow /></a><a className="button button-dark-ghost" href="mailto:sales@arcade.so">Talk to sales</a></div>
-          <small>No credit card required · Free forever plan</small>
+          <p className="eyebrow light">Choose the right team and plan</p>
+          <h2>Scale your company.<br />Not your complexity.</h2>
+          <p>Choose an engagement that fits your needs today and scales effortlessly with your company and project scope.</p>
+          <div className="cta-actions"><a className="button button-white" href="#create">Start a project <Arrow /></a><a className="button button-dark-ghost" href="mailto:hello@hitasoft.com">Talk to our team</a></div>
+          <small>Flexible engagement · Transparent delivery · Long-term partnership</small>
         </div>
       </section>
 
       <footer className="footer">
-        <div className="footer-top"><a className="brand" href="#top"><span className="brand-mark"><i /><i /><i /></span><span>Arcade</span></a><p>Your product, beautifully explained.</p><div className="footer-links"><a href="#platform">Platform</a><a href="#solutions">Solutions</a><a href="#pricing">Pricing</a><a href="#resources">Resources</a></div></div>
-        <div className="footer-bottom"><span>© 2026 Arcade Software, Inc.</span><div><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#security">Security</a><a href="#status">Status</a></div><span className="socials">in&nbsp;&nbsp;𝕏</span></div>
+        <div className="footer-top"><a className="brand" href="#top"><span className="brand-mark"><i /><i /><i /></span><span>Hitasoft</span></a><p>Technology engineered for growth.</p><div className="footer-links"><a href="#platform">What we do</a><a href="#solutions">Services</a><a href="#pricing">Engagement</a><a href="#resources">Why Hitasoft</a></div></div>
+        <div className="footer-bottom"><span>© 2026 Hitasoft Technologies. All rights reserved.</span><div><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#security">Security</a><a href="mailto:hello@hitasoft.com">Contact</a></div><span className="socials">in&nbsp;&nbsp;𝕏</span></div>
       </footer>
     </main>
   );
