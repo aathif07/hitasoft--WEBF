@@ -129,3 +129,8 @@ html{scroll-padding-top:76px}.section,.hero,.logo-strip{scroll-margin-top:76px}.
 .hero{padding-top:188px;min-height:770px}.mega-columns{grid-template-columns:repeat(auto-fit,minmax(125px,1fr))}.mega-columns>div{min-width:0}.mega-columns a{line-height:1.35;align-items:flex-start}.nav-item:nth-child(3) .mega-menu{left:80px}.nav-item:nth-child(3) .mega-intro strong:after{content:"We connect models, data, software, and infrastructure into dependable systems engineered to learn, perform, and scale in production.";display:block;margin-top:15px;color:#9ca9bf;font-size:11px;line-height:1.55;font-weight:400;letter-spacing:0}
 @media(max-width:900px){.hero{padding-top:154px;min-height:700px}}
 @media(max-width:640px){.hero{padding-top:140px;min-height:680px}}
+
+/* Let the impact story use more of the desktop canvas. */
+.impact-section{max-width:1480px;padding-left:18px;padding-right:18px}.impact-card{min-height:650px}.impact-intro,.evolution-row{max-width:1320px;margin-left:auto;margin-right:auto}
+@media(max-width:900px){.impact-section{padding-left:18px;padding-right:18px}.impact-card{min-height:670px}}
+@media(max-width:640px){.impact-section{padding-left:10px;padding-right:10px}.impact-card{min-height:720px}}
