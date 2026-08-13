@@ -1,7 +1,3 @@
-"use client";
-
-import { FormEvent, useState } from "react";
-
 const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
   <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>
 );
@@ -19,14 +15,6 @@ const services = [
 ];
 
 export default function Home() {
-  const [url, setUrl] = useState("");
-  const [message, setMessage] = useState("");
-
-  function submitUrl(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setMessage(url.trim() ? "Thank you — our team will get in touch to discuss your project." : "Enter your work email to start a conversation.");
-  }
-
   return (
     <main>
       <header className="site-header">
@@ -36,16 +24,16 @@ export default function Home() {
             <span>Hitasoft</span>
           </a>
           <div className="nav-links">
-            <a href="#platform">What we do</a>
-            <a href="#solutions">Services <span>⌄</span></a>
-            <a href="#resources">Why Hitasoft</a>
-            <a href="#pricing">Engagement</a>
+            <a href="#platform">AI systems</a>
+            <a href="#solutions">Capabilities <span>⌄</span></a>
+            <a href="#resources">Engineering</a>
+            <a href="#pricing">Approach</a>
           </div>
           <div className="nav-actions">
-            <a className="button button-ghost nav-sales" href="mailto:hello@hitasoft.com">Talk to our team</a>
-            <a className="button button-primary" href="#create">Start a project</a>
+            <a className="button button-ghost nav-sales" href="#resources">Engineering principles</a>
+            <a className="button button-primary" href="#platform">View capabilities</a>
           </div>
-          <a className="mobile-cta" href="#create">Start a project</a>
+          <a className="mobile-cta" href="#platform">Capabilities</a>
         </nav>
       </header>
 
@@ -55,18 +43,22 @@ export default function Home() {
         <div className="ripple ripple-three" />
         <div className="hero-content">
           <a className="announcement" href="#resources">
-            <strong>Prototype to production</strong><span /><em>Built for ambitious teams</em><Arrow />
+            <strong>AI-native engineering</strong><span /><em>Reliable by design</em><Arrow />
           </a>
-          <p className="eyebrow">What we do</p>
-          <h1>Unlock the power of<br /><span>young innovators.</span></h1>
-          <p className="hero-copy">Accelerate your journey from prototype to production. From early technical errors to production-critical challenges, Hitasoft ensures seamless execution at every stage.</p>
+          <p className="eyebrow">Applied intelligence · production infrastructure</p>
+          <h1>Engineering intelligence<br />for <span>real-world systems.</span></h1>
+          <p className="hero-copy">Hitasoft builds secure AI platforms, adaptive software, and resilient cloud systems—from first model to production-scale intelligence.</p>
 
-          <form className="url-form" id="create" onSubmit={submitUrl}>
-            <label className="sr-only" htmlFor="product-url">Work email</label>
-            <input id="product-url" type="email" value={url} onChange={(event) => setUrl(event.target.value)} placeholder="Enter your work email" />
-            <button aria-label="Start a conversation with Hitasoft" type="submit"><Arrow /></button>
-          </form>
-          <p className="form-note" aria-live="polite">{message || "A focused engineering team · Clear delivery from day one"}</p>
+          <div className="hero-tech-panel" aria-label="Hitasoft AI system capabilities">
+            <div className="tech-panel-head"><span><i /> SYSTEM ONLINE</span><code>HITASOFT / AI CORE</code></div>
+            <div className="tech-metrics">
+              <div><small>Inference pipeline</small><b>18ms</b><span>optimized</span></div>
+              <div><small>System availability</small><b>99.99%</b><span>observable</span></div>
+              <div><small>Security posture</small><b>A+</b><span>zero trust</span></div>
+            </div>
+            <div className="tech-command"><span>›</span><code>deploy.intelligence(&#123; scalable: true, secure: true &#125;)</code><i /></div>
+            <div className="tech-tags"><span>AI Agents</span><span>RAG</span><span>MLOps</span><span>Cloud Native</span><span>Data Systems</span></div>
+          </div>
 
         </div>
       </section>
@@ -79,35 +71,35 @@ export default function Home() {
       <section className="section intro-section" id="platform">
         <div className="service-mosaic">
           <article className="mosaic-intro">
-            <div><p className="eyebrow">End-to-end IT solutions</p><h2>Technology services<br />designed for your growth.</h2></div>
-            <p>We deliver innovative, scalable, and reliable IT solutions that help businesses operate smarter, grow faster, and stay competitive in a rapidly evolving digital world.</p>
+            <div><p className="eyebrow">Intelligent systems, end to end</p><h2>Technical foundations<br />for adaptive products.</h2></div>
+            <p>We connect models, data, software, and infrastructure into dependable systems engineered to learn, perform, and scale in production.</p>
           </article>
           <article className="mosaic-card mosaic-software">
-            <div className="mosaic-topline"><span className="mosaic-icon">H</span><span>SOFTWARE</span></div>
+            <div className="mosaic-topline"><span className="mosaic-icon">H</span><span>APPLIED AI</span></div>
             <div className="software-mark"><i /><i /><i /></div>
-            <div><h3>Custom software built to scale with you.</h3><p>High-performance systems tailored to your workflows, customers, and long-term business goals.</p><a href="#create">Explore software <Arrow /></a></div>
+            <div><h3>AI that works beyond the prototype.</h3><p>Production-grade agents, retrieval systems, automation, and decision intelligence grounded in your data.</p></div>
           </article>
           <article className="mosaic-card mosaic-cloud">
             <div className="mosaic-topline"><span className="mosaic-icon">☁</span><span>CLOUD</span></div>
             <div className="cloud-visual"><span>99.99%</span><small>Infrastructure availability</small><div>{[38,55,47,72,66,90,78].map((height,index)=><i key={index} style={{height:`${height}%`}} />)}</div></div>
-            <h3>Cloud infrastructure that performs under pressure.</h3><a href="#create">Explore cloud <Arrow /></a>
+            <h3>Cloud infrastructure that performs under pressure.</h3>
           </article>
           <article className="mosaic-card mosaic-security">
             <div className="mosaic-topline"><span className="mosaic-icon">◇</span><span>SECURITY</span></div>
-            <h3>Protection designed into every layer.</h3><a href="#create">Explore security <Arrow /></a>
+            <h3>Protection designed into every layer.</h3>
           </article>
           <article className="mosaic-card mosaic-integration">
             <div className="mosaic-topline"><span className="mosaic-icon">⌁</span><span>INTEGRATION</span></div>
-            <h3>One connected technology ecosystem.</h3><a href="#create">Explore integration <Arrow /></a>
+            <h3>One connected technology ecosystem.</h3>
           </article>
         </div>
       </section>
 
       <section className="section alternate" id="solutions">
         <div className="section-heading compact">
-          <p className="eyebrow">Let’s see what we can do</p>
-          <h2>One team. Every technology challenge.</h2>
-          <p>From strategy to deployment, we deliver reliable solutions that scale with your business and adapt to tomorrow’s challenges.</p>
+          <p className="eyebrow">Engineering capabilities</p>
+          <h2>One team. Every layer of the system.</h2>
+          <p>From AI and data to cloud, interfaces, and security, we engineer the complete technical stack for dependable digital products.</p>
         </div>
         <div className="services-grid">
           {services.map(([number, title, description]) => <article className="service-card" key={title}><div className="service-number">{number}</div><h3>{title}</h3><p>{description}</p></article>)}
@@ -116,24 +108,24 @@ export default function Home() {
 
       <section className="section proof-section" id="resources">
         <div className="proof-grid">
-          <blockquote><span className="quote-mark">“</span><p>We work for passion, not only for money. Every engagement is approached with ownership, technical curiosity, and a commitment to delivering real business value.</p><footer><div className="avatar">HI</div><div><b>Hitasoft Engineering</b><small>Your technology partner from idea to scale</small></div></footer></blockquote>
-          <div className="proof-stats"><div><b>01</b><span>team from prototype to production</span></div><div><b>24/7</b><span>monitoring and dependable support</span></div><div><b>100%</b><span>solutions aligned to your goals</span></div><div><b>∞</b><span>built to adapt as you grow</span></div></div>
+          <blockquote><span className="quote-mark">“</span><p>Intelligence is only valuable when the system around it is observable, secure, and reliable. We engineer all four as one production architecture.</p><footer><div className="avatar">HI</div><div><b>Hitasoft Engineering</b><small>Applied AI and systems architecture</small></div></footer></blockquote>
+          <div className="proof-stats"><div><b>01</b><span>architecture from model to production</span></div><div><b>24/7</b><span>observability across every service</span></div><div><b>100%</b><span>security designed into the stack</span></div><div><b>∞</b><span>systems built to learn and adapt</span></div></div>
         </div>
       </section>
 
       <section className="section pricing-section" id="pricing">
         <div className="final-cta">
           <div className="cta-ripple one" /><div className="cta-ripple two" />
-          <p className="eyebrow light">Choose the right team and plan</p>
-          <h2>Scale your company.<br />Not your complexity.</h2>
-          <p>Choose an engagement that fits your needs today and scales effortlessly with your company and project scope.</p>
-          <div className="cta-actions"><a className="button button-white" href="#create">Start a project <Arrow /></a><a className="button button-dark-ghost" href="mailto:hello@hitasoft.com">Talk to our team</a></div>
-          <small>Flexible engagement · Transparent delivery · Long-term partnership</small>
+          <p className="eyebrow light">Production intelligence</p>
+          <h2>Build intelligence<br />into every layer.</h2>
+          <p>Explore the architectures, platforms, and engineering disciplines behind reliable AI-enabled products.</p>
+          <div className="cta-actions"><a className="button button-white" href="#platform">Review AI systems <Arrow /></a><a className="button button-dark-ghost" href="#resources">Engineering approach</a></div>
+          <small>Observable systems · Secure infrastructure · Responsible AI</small>
         </div>
       </section>
 
       <footer className="footer">
-        <div className="footer-top"><a className="brand" href="#top"><span className="brand-mark"><i /><i /><i /></span><span>Hitasoft</span></a><p>Technology engineered for growth.</p><div className="footer-links"><a href="#platform">What we do</a><a href="#solutions">Services</a><a href="#pricing">Engagement</a><a href="#resources">Why Hitasoft</a></div></div>
+        <div className="footer-top"><a className="brand" href="#top"><span className="brand-mark"><i /><i /><i /></span><span>Hitasoft</span></a><p>Intelligence engineered for production.</p><div className="footer-links"><a href="#platform">AI systems</a><a href="#solutions">Capabilities</a><a href="#pricing">Approach</a><a href="#resources">Engineering</a></div></div>
         <div className="footer-bottom"><span>© 2026 Hitasoft Technologies. All rights reserved.</span><div><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#security">Security</a><a href="mailto:hello@hitasoft.com">Contact</a></div><span className="socials">in&nbsp;&nbsp;𝕏</span></div>
       </footer>
     </main>
