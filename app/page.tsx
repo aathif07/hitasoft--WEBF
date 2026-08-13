@@ -24,10 +24,11 @@ const navMenus = [
     { title: "Company", items: ["About Hitasoft", "How we work", "Leadership", "Careers"] },
     { title: "Confidence", items: ["Client stories", "Engineering principles", "Security", "Compliance"] },
   ] },
-  { label: "Services", href: "#platform", heading: "Complete digital engineering across the product lifecycle.", columns: [
-    { title: "Build", items: ["Product engineering", "Web development", "Mobile development", "Enterprise software"] },
-    { title: "Transform", items: ["Product design", "Cloud modernization", "DevOps & QA", "System integration"] },
-    { title: "Operate", items: ["Cybersecurity", "Data & analytics", "Managed IT", "Dedicated teams"] },
+  { label: "Services", href: "#solutions", heading: "Technical foundations for adaptive products.", columns: [
+    { title: "Applied AI", items: ["AI beyond the prototype", "Agents, RAG & automation"] },
+    { title: "Cloud", items: ["99.99% infrastructure availability", "Performance under pressure"] },
+    { title: "Security", items: ["Protection in every layer", "Secure delivery by design"] },
+    { title: "Integration", items: ["One connected ecosystem", "Models, data & software"] },
   ] },
   { label: "Industries", href: "#industries", heading: "Technology shaped around real operating environments.", columns: [
     { title: "Regulated", items: ["Healthcare", "Financial services", "Insurance", "Energy"] },
@@ -123,33 +124,6 @@ export default function Home() {
           <div><strong>Built for<br />what&apos;s next</strong><small>2026 and beyond</small></div>
           <p>We support your evolution by strengthening <span>what works today</span> and engineering what your business can become tomorrow.</p>
           <small>Clear strategy · senior engineering · continuous improvement</small>
-        </div>
-      </section>
-
-      <section className="section intro-section" id="platform">
-        <div className="service-mosaic">
-          <article className="mosaic-intro">
-            <div><p className="eyebrow">Intelligent systems, end to end</p><h2>Technical foundations<br />for adaptive products.</h2></div>
-            <p>We connect models, data, software, and infrastructure into dependable systems engineered to learn, perform, and scale in production.</p>
-          </article>
-          <article className="mosaic-card mosaic-software">
-            <div className="mosaic-topline"><span className="mosaic-icon">H</span><span>APPLIED AI</span></div>
-            <div className="software-mark"><i /><i /><i /></div>
-            <div><h3>AI that works beyond the prototype.</h3><p>Production-grade agents, retrieval systems, automation, and decision intelligence grounded in your data.</p></div>
-          </article>
-          <article className="mosaic-card mosaic-cloud">
-            <div className="mosaic-topline"><span className="mosaic-icon">☁</span><span>CLOUD</span></div>
-            <div className="cloud-visual"><span>99.99%</span><small>Infrastructure availability</small><div>{[38,55,47,72,66,90,78].map((height,index)=><i key={index} style={{height:`${height}%`}} />)}</div></div>
-            <h3>Cloud infrastructure that performs under pressure.</h3>
-          </article>
-          <article className="mosaic-card mosaic-security">
-            <div className="mosaic-topline"><span className="mosaic-icon">◇</span><span>SECURITY</span></div>
-            <h3>Protection designed into every layer.</h3>
-          </article>
-          <article className="mosaic-card mosaic-integration">
-            <div className="mosaic-topline"><span className="mosaic-icon">⌁</span><span>INTEGRATION</span></div>
-            <h3>One connected technology ecosystem.</h3>
-          </article>
         </div>
       </section>
 
