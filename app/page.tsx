@@ -17,27 +17,26 @@ const services = [
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <nav className="nav-shell" aria-label="Primary navigation">
-          <a className="brand" href="#top" aria-label="Hitasoft home">
-            <span className="brand-mark"><i /><i /><i /></span>
-            <span>Hitasoft</span>
-          </a>
-          <div className="nav-links">
-            <a href="#platform">AI systems</a>
-            <a href="#solutions">Capabilities <span>⌄</span></a>
-            <a href="#resources">Engineering</a>
-            <a href="#pricing">Approach</a>
-          </div>
-          <div className="nav-actions">
-            <a className="button button-ghost nav-sales" href="#resources">Engineering principles</a>
-            <a className="button button-primary" href="#platform">View capabilities</a>
-          </div>
-          <a className="mobile-cta" href="#platform">Capabilities</a>
-        </nav>
-      </header>
-
       <section className="hero" id="top">
+        <header className="site-header">
+          <nav className="nav-shell" aria-label="Primary navigation">
+            <a className="brand" href="#top" aria-label="Hitasoft home">
+              <span className="brand-mark"><i /><i /><i /></span>
+              <span>Hitasoft</span>
+            </a>
+            <div className="nav-links">
+              <a href="#platform">AI systems</a>
+              <a href="#solutions">Capabilities <span>⌄</span></a>
+              <a href="#resources">Engineering</a>
+              <a href="#pricing">Approach</a>
+            </div>
+            <div className="nav-actions">
+              <a className="button button-ghost nav-sales" href="#resources">Principles</a>
+              <a className="button button-primary" href="mailto:hello@hitasoft.com">Start a project</a>
+            </div>
+            <a className="mobile-cta" href="#platform">Capabilities</a>
+          </nav>
+        </header>
         <div className="ripple ripple-one" />
         <div className="ripple ripple-two" />
         <div className="ripple ripple-three" />
@@ -56,6 +55,29 @@ export default function Home() {
       <section className="logo-strip" aria-label="Customer logos">
         <p>One technology partner across the full delivery lifecycle</p>
         <div><b>Strategy</b><b>Design</b><b>Build</b><b>Cloud</b><b>Security</b><b>Scale</b></div>
+      </section>
+
+      <section className="impact-section" aria-labelledby="impact-title">
+        <div className="impact-intro">
+          <h2 id="impact-title">We help ambitious companies turn complex technology into <span>clear, useful, and lasting products.</span></h2>
+          <p>Making technology matter</p>
+        </div>
+        <div className="impact-card">
+          <div className="impact-stars" />
+          <div className="impact-arc one" /><div className="impact-arc two" />
+          <h3>Every project is a fusion of<br />strategy, engineering,<br />and human insight.</h3>
+          <p className="impact-label">How we measure impact</p>
+          <div className="impact-metrics">
+            <article><b>200+</b><span>product releases<br />delivered</span><a href="#solutions" aria-label="Explore product releases">→</a></article>
+            <article><b>99.99%</b><span>availability designed<br />for critical systems</span><a href="#platform" aria-label="Explore infrastructure">→</a></article>
+            <article><b>10×</b><span>faster paths from<br />prototype to production</span><a href="#resources" aria-label="Explore our approach">→</a></article>
+          </div>
+        </div>
+        <div className="evolution-row">
+          <div><strong>Built for<br />what&apos;s next</strong><small>2026 and beyond</small></div>
+          <p>We support your evolution by strengthening <span>what works today</span> and engineering what your business can become tomorrow.</p>
+          <small>Clear strategy · senior engineering · continuous improvement</small>
+        </div>
       </section>
 
       <section className="section intro-section" id="platform">
