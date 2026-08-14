@@ -199,3 +199,14 @@ body{background:#050b13;color:#f4f8fc}
 .button-white{background:#eff9ff;color:#07111d}.button-dark-ghost{background:rgba(3,17,29,.32)}
 .footer{color:#eaf3fa}.footer-top{border-bottom-color:#203143}.footer-top p,.footer-links a,.footer-bottom{color:#8296aa}.footer-links a:hover,.footer-bottom a:hover{color:#fff}
 @media(max-width:640px){.hero:after{background:radial-gradient(ellipse 62% 52% at 50% 43%,rgba(35,102,150,.16),rgba(5,11,19,.06) 50%,transparent 80%)}.impact-metrics{border-top-color:rgba(184,222,247,.18)}.impact-metrics article{border-bottom-color:rgba(184,222,247,.15)}}
+
+/* Alternating light and dark section rhythm. */
+.logo-strip{background:#f7f9fc;color:#0c1723;border-bottom-color:#dce4eb}.logo-strip p{color:#667484}.logo-strip div{color:#344352}
+.impact-section{background:#f7f9fc;color:#0c1723;box-shadow:0 0 0 100vmax #f7f9fc;clip-path:inset(0 -100vmax)}
+.impact-intro h2{color:#0c1723}.impact-intro h2 span{color:#8994a0}.impact-intro>p{color:#687584}.evolution-row{border-bottom-color:#d5dee7}.evolution-row strong,.evolution-row>p{color:#101c28}.evolution-row>p span{color:#8c96a1}.evolution-row div small,.evolution-row>small{color:#6d7986}
+.ai-services-section{background:radial-gradient(circle at 50% 10%,#0b1a28 0%,#060d16 45%,#040a11 100%);color:#f4f8fc}
+.industries-section{background:#f8fafc;color:#0c1723;box-shadow:0 0 0 100vmax #f8fafc;clip-path:inset(0 -100vmax)}
+.industries-head h2{color:#0c1723}.industries-head>p{color:#5e6c7a}.industries-grid{border-color:#d8e1e9}.industries-grid article{background:#fff;border-color:#d8e1e9}.industries-grid article:hover{background:#edf6fc}.industries-grid h3,.industries-grid a{color:#111d29}.industries-grid p{color:#5e6c7a}.industries-grid article>span,.industries-grid a span{color:#167fc1}
+.proof-section{background:#050b13;color:#f4f8fc;box-shadow:0 0 0 100vmax #050b13;clip-path:inset(0 -100vmax)}
+.pricing-section{background:#f8fafc;color:#0c1723;box-shadow:0 0 0 100vmax #f8fafc;clip-path:inset(0 -100vmax)}
+.footer{background:#050b13;color:#eaf3fa;box-shadow:0 0 0 100vmax #050b13;clip-path:inset(0 -100vmax)}
