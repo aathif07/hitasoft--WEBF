@@ -21,10 +21,16 @@ const MarqueeLogoScroller = React.forwardRef<HTMLDivElement, MarqueeLogoScroller
     const animationDuration = { normal: "34s", slow: "64s", fast: "12s" }[speed];
 
     return (
-      <section ref={ref} aria-label={title} className={cn("marquee-logo-scroller", className)} {...props}>
+      <div ref={ref} aria-label={title} className={cn("marquee-logo-scroller", className)} {...props}>
         <div className="marquee-logo-header">
-          <h2>{title}</h2>
-          <p>{description}</p>
+          <div className="marquee-logo-heading">
+            <span className="marquee-logo-eyebrow">Delivery lifecycle</span>
+            <h2>{title}</h2>
+          </div>
+          <div className="marquee-logo-summary">
+            <span aria-hidden="true">01 — {String(logos.length).padStart(2, "0")}</span>
+            <p>{description}</p>
+          </div>
         </div>
 
         <div className="marquee-logo-window">
@@ -54,7 +60,7 @@ const MarqueeLogoScroller = React.forwardRef<HTMLDivElement, MarqueeLogoScroller
             })}
           </div>
         </div>
-      </section>
+      </div>
     );
   },
 );
