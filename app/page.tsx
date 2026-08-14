@@ -1,58 +1,53 @@
 import { ScrollRevealHeading } from "./ScrollRevealHeading";
 import { MarqueeLogoScroller } from "../components/ui/marquee-logo-scroller";
+import { Case } from "../components/ui/cases-with-infinite-scroll";
 
 const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
   <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>
 );
 
-const aiCapabilities = [
-  { title: "AI consulting", label: "Strategy", description: "Find the strongest use cases, assess data and technical readiness, and turn ambition into a practical AI roadmap.", outcomes: ["Opportunity mapping", "Readiness roadmap"] },
-  { title: "Product engineering", label: "Build", description: "Design and engineer complete AI products with dependable architecture, thoughtful UX, evaluation, and production deployment.", outcomes: ["Product architecture", "Production release"] },
-  { title: "Generative AI", label: "Models", description: "Build secure LLM and multimodal experiences grounded in your enterprise knowledge, workflows, and quality standards.", outcomes: ["Enterprise RAG", "Model evaluation"] },
-  { title: "AI agents", label: "Automation", description: "Create context-aware agents that reason across tasks, coordinate tools, and automate complex operational workflows.", outcomes: ["Agent workflows", "Tool orchestration"] },
-  { title: "Assistants & chatbots", label: "Experience", description: "Deliver conversational systems that understand intent and context across customer, employee, and support journeys.", outcomes: ["Smart assistants", "Conversational UX"] },
-  { title: "Enterprise integration", label: "Connect", description: "Connect models to business software, governed data, APIs, and teams without disrupting critical systems.", outcomes: ["System integration", "Data connectivity"] },
-  { title: "AI cybersecurity", label: "Trust", description: "Protect AI applications, data flows, models, and access with controls designed into every layer of delivery.", outcomes: ["Risk controls", "Threat monitoring"] },
-  { title: "AIOps", label: "Operations", description: "Use operational intelligence to reduce alert noise, predict incidents, and accelerate root-cause analysis and recovery.", outcomes: ["Predictive operations", "Incident automation"] },
-  { title: "AI copilots", label: "Productivity", description: "Equip teams with role-aware copilots for knowledge discovery, recommendations, decisions, and faster execution.", outcomes: ["Knowledge intelligence", "Role-aware support"] },
+const specialistCapabilities = [
+  { title: "AI consulting", label: "Strategy", description: "Find the strongest use cases, assess readiness, and turn ambition into a practical AI roadmap." },
+  { title: "Product engineering", label: "Build", description: "Design and engineer dependable AI products from architecture through production release." },
+  { title: "Generative AI", label: "Models", description: "Build secure LLM and multimodal experiences grounded in enterprise knowledge." },
+  { title: "AI agents", label: "Automation", description: "Create context-aware agents that coordinate tools and automate complex workflows." },
+  { title: "Assistants & chatbots", label: "Experience", description: "Deliver conversational systems that understand intent, context, and user needs." },
+  { title: "Enterprise integration", label: "Connect", description: "Connect models to governed data, APIs, software, and critical business workflows." },
+  { title: "AI cybersecurity", label: "Trust", description: "Protect AI applications, models, data flows, and access across every delivery layer." },
+  { title: "AIOps", label: "Operations", description: "Reduce alert noise, predict incidents, and accelerate root-cause analysis and recovery." },
+  { title: "AI copilots", label: "Productivity", description: "Equip teams with role-aware support for knowledge, recommendations, and decisions." },
 ];
 
-const aiDeliveryProcess = [
-  { title: "Discover", description: "Align the business case, users, data, risks, and measurable success criteria before choosing the technology." },
-  { title: "Design", description: "Shape the experience, system architecture, model approach, governance, and evaluation plan as one blueprint." },
-  { title: "Build", description: "Develop the product, data pipelines, models, guardrails, and quality checks in focused delivery cycles." },
-  { title: "Integrate", description: "Connect the solution to enterprise data, software, identity, and workflows with minimal disruption." },
-  { title: "Operate", description: "Monitor quality, cost, security, reliability, and adoption—then improve continuously in production." },
-];
+const specialistRows = [specialistCapabilities.slice(0, 5), specialistCapabilities.slice(5)];
 
 const navMenus = [
   { label: "Hitasoft AI", href: "#solutions", heading: "Enterprise intelligence, engineered for production.", columns: [
-    { title: "AI services", items: ["AI consulting", "AI development", "AI integration", "AI governance"] },
-    { title: "Generative AI", items: ["Generative AI", "AI agents", "Enterprise RAG", "AI copilots"] },
-    { title: "Applied intelligence", items: ["Machine learning", "Computer vision", "Voice AI", "Intelligent automation"] },
+    { title: "AI services", items: [["AI consulting", "#capability-ai-consulting"], ["AI development", "#capability-product-engineering"], ["AI integration", "#capability-enterprise-integration"], ["AI governance", "#capability-ai-cybersecurity"]] },
+    { title: "Generative AI", items: [["Generative AI", "#capability-generative-ai"], ["AI agents", "#capability-ai-agents"], ["Enterprise RAG", "#capability-generative-ai"], ["AI copilots", "#capability-ai-copilots"]] },
+    { title: "Applied intelligence", items: [["Machine learning", "#solutions"], ["Computer vision", "#solutions"], ["Voice AI", "#capability-assistants-chatbots"], ["Intelligent automation", "#capability-ai-agents"]] },
   ] },
   { label: "About", href: "#about", heading: "A senior technology team built around outcomes.", columns: [
-    { title: "Company", items: ["About Hitasoft", "How we work", "Leadership", "Careers"] },
-    { title: "Confidence", items: ["Client stories", "Engineering principles", "Security", "Compliance"] },
+    { title: "Company", items: [["About Hitasoft", "#about"], ["How we work", "#about"], ["Leadership", "#about"], ["Careers", "mailto:hello@hitasoft.com?subject=Careers%20at%20Hitasoft"]] },
+    { title: "Confidence", items: [["Client stories", "#portfolio"], ["Engineering principles", "#resources"], ["Security", "#capability-ai-cybersecurity"], ["Compliance", "#industries"]] },
   ] },
   { label: "Services", href: "#solutions", heading: "Technical foundations for adaptive products.", columns: [
-    { title: "Applied AI", items: ["AI beyond the prototype", "Agents, RAG & automation"] },
-    { title: "Cloud", items: ["99.99% infrastructure availability", "Performance under pressure"] },
-    { title: "Security", items: ["Protection in every layer", "Secure delivery by design"] },
-    { title: "Integration", items: ["One connected ecosystem", "Models, data & software"] },
+    { title: "Applied AI", items: [["AI beyond the prototype", "#solutions"], ["Agents, RAG & automation", "#capability-ai-agents"]] },
+    { title: "Cloud", items: [["99.99% infrastructure availability", "#about"], ["Performance under pressure", "#capability-aiops"]] },
+    { title: "Security", items: [["Protection in every layer", "#capability-ai-cybersecurity"], ["Secure delivery by design", "#resources"]] },
+    { title: "Integration", items: [["One connected ecosystem", "#capability-enterprise-integration"], ["Models, data & software", "#capability-product-engineering"]] },
   ] },
   { label: "Industries", href: "#industries", heading: "Technology shaped around real operating environments.", columns: [
-    { title: "Regulated", items: ["Healthcare", "Financial services", "Insurance", "Energy"] },
-    { title: "Connected", items: ["Logistics", "Automotive", "Manufacturing", "Telecom"] },
-    { title: "Experience-led", items: ["Retail & commerce", "Education", "Travel", "Media"] },
+    { title: "Regulated", items: [["Healthcare", "#industry-healthcare"], ["Financial services", "#industry-financial-services"], ["Insurance", "#industries"], ["Energy", "#industries"]] },
+    { title: "Connected", items: [["Logistics", "#industry-logistics-supply-chain"], ["Automotive", "#industry-automotive-mobility"], ["Manufacturing", "#industry-manufacturing"], ["Telecom", "#industries"]] },
+    { title: "Experience-led", items: [["Retail & commerce", "#industry-retail-commerce"], ["Education", "#industry-education"], ["Travel", "#industry-travel-hospitality"], ["Media", "#industries"]] },
   ] },
-  { label: "Portfolio", href: "#about", heading: "Selected systems designed to perform and evolve.", columns: [
-    { title: "Work", items: ["AI platforms", "Enterprise products", "Mobile experiences", "Cloud transformation"] },
-    { title: "Outcomes", items: ["Product launches", "Workflow automation", "Data intelligence", "Platform modernization"] },
+  { label: "Portfolio", href: "#portfolio", heading: "Selected systems designed to perform and evolve.", columns: [
+    { title: "Work", items: [["AI platforms", "#portfolio"], ["Enterprise products", "#portfolio"], ["Mobile experiences", "#portfolio"], ["Cloud transformation", "#portfolio"]] },
+    { title: "Outcomes", items: [["Product launches", "#portfolio"], ["Workflow automation", "#portfolio"], ["Data intelligence", "#portfolio"], ["Platform modernization", "#portfolio"]] },
   ] },
   { label: "Resources", href: "#resources", heading: "Practical thinking for technology leaders.", columns: [
-    { title: "Explore", items: ["AI insights", "Engineering guides", "Technology briefs", "FAQs"] },
-    { title: "Connect", items: ["Project discovery", "Architecture review", "AI readiness", "Contact our team"] },
+    { title: "Explore", items: [["AI insights", "#resources"], ["Engineering guides", "#resources"], ["Technology briefs", "#resources"], ["FAQs", "#resources"]] },
+    { title: "Connect", items: [["Project discovery", "mailto:hello@hitasoft.com?subject=Project%20discovery"], ["Architecture review", "mailto:hello@hitasoft.com?subject=Architecture%20review"], ["AI readiness", "mailto:hello@hitasoft.com?subject=AI%20readiness"], ["Contact our team", "mailto:hello@hitasoft.com"]] },
   ] },
 ];
 
@@ -93,7 +88,7 @@ export default function Home() {
                   <div className="mega-menu">
                     <div className="mega-intro"><small>HITASOFT</small><strong>{menu.heading}</strong><a href={menu.href}>Explore {menu.label} <Arrow /></a></div>
                     <div className="mega-columns">
-                      {menu.columns.map((column) => <div key={column.title}><b>{column.title}</b>{column.items.map((item) => <a href={menu.href} key={item}>{item}<span>→</span></a>)}</div>)}
+                      {menu.columns.map((column) => <div key={column.title}><b>{column.title}</b>{column.items.map(([item, href]) => <a href={href} key={item}>{item}<span>→</span></a>)}</div>)}
                     </div>
                   </div>
                 </div>
@@ -165,60 +160,72 @@ export default function Home() {
               <a href="mailto:hello@hitasoft.com">Plan an AI initiative <Arrow diagonal /></a>
             </div>
           </div>
-          <div className="ai-feature-grid">
-            <article className="ai-feature-card ai-feature-image">
-              <div className="ai-card-top"><span>01</span><small>Strategy to scale</small></div>
-              <div className="ai-image-copy">
-                <strong>One senior team.<br />Every AI layer.</strong>
-                <p>Strategy, data, models, product, security, and operations—connected from day one.</p>
+          <div className="ai-dilemma">
+            <div className="ai-dilemma-head">
+              <div><span>Enterprise AI, made practical</span><h3>How we solve your<br />enterprise AI dilemma.</h3></div>
+              <p>We combine focused strategy, production engineering, and specialist AI capability to improve performance, reduce complexity, and accelerate responsible adoption.</p>
+            </div>
+            <div className="ai-dilemma-grid">
+              <article className="dilemma-card dilemma-foundation" aria-label="Enterprise AI computing foundation" />
+              <article className="dilemma-card dilemma-cost">
+                <p>We reduce the cost and complexity of developing <strong>in-house AI solutions</strong></p>
+                <div className="dilemma-bars" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><span>₹</span></div>
+              </article>
+              <article className="dilemma-card dilemma-optimize">
+                <p>We optimize your <strong>value chains and business processes</strong></p>
+                <div className="dilemma-switch" aria-hidden="true"><i /><span>↗</span></div>
+              </article>
+              <article className="dilemma-card dilemma-adoption">
+                <div className="dilemma-bridge" aria-hidden="true"><i /><span>ϟ</span><i /></div>
+                <p>We remove barriers to slow AI adoption caused by <strong>scalability and customization</strong></p>
+              </article>
+              <article className="dilemma-card dilemma-integration">
+                <p>We bring certified expertise to <strong>integrate AI into existing workflows</strong></p>
+                <div className="dilemma-code" aria-hidden="true">10110010<br />01100101<br />11001010<br />00110110<br />10101101</div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="portfolio-section" id="portfolio" aria-labelledby="portfolio-title">
+        <div className="portfolio-head">
+          <div>
+            <p className="eyebrow">Selected work / Measurable outcomes</p>
+            <h2 id="portfolio-title">Systems built to perform<br />in the real world.</h2>
+          </div>
+          <div>
+            <p>From intelligent operations to customer-facing products, we turn complex requirements into secure, scalable platforms that teams can trust and grow.</p>
+            <a href="mailto:hello@hitasoft.com">Discuss your project <Arrow diagonal /></a>
+          </div>
+        </div>
+        <div className="portfolio-cases"><Case /></div>
+      </section>
+
+      <section className="specialist-section" id="specialist-capabilities" aria-labelledby="specialist-title">
+        <div className="specialist-head">
+          <div><p>Specialist capability</p><h2 id="specialist-title">Everything needed to move<br />AI into production.</h2></div>
+          <p>Engage one service or bring the full practice together. Every capability connects cleanly with the next—from strategy and models to integration, security, and operations.</p>
+        </div>
+        <div className="specialist-marquee" aria-label="AI specialist capabilities">
+          {specialistRows.map((row, rowIndex) => (
+            <div className={`specialist-row specialist-row-${rowIndex + 1}`} key={rowIndex}>
+              <div className="specialist-track">
+                {[false, true].map((duplicate) => (
+                  <div className="specialist-group" aria-hidden={duplicate || undefined} key={String(duplicate)}>
+                    {row.map((capability, index) => (
+                      <a className="specialist-card" id={duplicate ? undefined : `capability-${capability.title.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`} href="mailto:hello@hitasoft.com" key={`${capability.title}-${duplicate}`}>
+                        <div><span>{String(rowIndex * 5 + index + 1).padStart(2, "0")}</span><small>{capability.label}</small><i aria-hidden="true">↗</i></div>
+                        <h3>{capability.title}</h3>
+                        <p>{capability.description}</p>
+                        <strong>Explore capability <Arrow diagonal /></strong>
+                      </a>
+                    ))}
+                  </div>
+                ))}
               </div>
-              <a href="mailto:hello@hitasoft.com" aria-label="Start an AI project">Start a project <Arrow diagonal /></a>
-            </article>
-
-            <article className="ai-feature-card ai-feature-editorial">
-              <div className="ai-card-top"><span>02</span><small>Production mindset</small></div>
-              <div className="ai-orbit" aria-hidden="true"><i /><i /><i /></div>
-              <blockquote>“We engineer the system around the model—so it stays useful, secure, and reliable in the real world.”</blockquote>
-              <div className="ai-card-signoff"><span className="avatar">HI</span><span><b>Hitasoft Engineering</b><small>Applied AI & systems</small></span></div>
-            </article>
-
-            <article className="ai-feature-card ai-feature-blue">
-              <div className="ai-card-top"><span>03</span><small>Connected capability</small></div>
-              <strong className="ai-stat">9<span>+</span></strong>
-              <p>AI capabilities, delivered as one integrated practice.</p>
-              <div className="ai-card-arrow" aria-hidden="true">↗</div>
-            </article>
-
-            <article className="ai-feature-card ai-feature-black">
-              <div className="ai-card-top"><span>04</span><small>Beyond launch</small></div>
-              <strong className="ai-stat">24<span>/7</span></strong>
-              <p>Monitoring and operational support for production AI systems.</p>
-              <div className="ai-pulse" aria-hidden="true"><i /><i /><i /><i /></div>
-            </article>
-          </div>
-          <div className="ai-capabilities-block">
-            <div className="ai-subsection-head">
-              <div><span>Specialist capability</span><h3>Everything needed to move<br />AI into production.</h3></div>
-              <p>Engage one service or bring the full practice together. Every capability is designed to connect cleanly with the next.</p>
             </div>
-            <div className="ai-capability-list" aria-label="AI development capabilities">
-              {aiCapabilities.map((capability, index) => (
-                <article className="ai-capability-card" key={capability.title}>
-                  <div className="ai-capability-meta"><span>{String(index + 1).padStart(2, "0")}</span><small>{capability.label}</small><i aria-hidden="true">↗</i></div>
-                  <h4>{capability.title}</h4>
-                  <p>{capability.description}</p>
-                  <div className="ai-capability-outcomes">{capability.outcomes.map((outcome) => <span key={outcome}>{outcome}</span>)}</div>
-                  <a href="mailto:hello@hitasoft.com" aria-label={`Discuss ${capability.title}`}>Explore capability <Arrow diagonal /></a>
-                </article>
-              ))}
-            </div>
-          </div>
-          <div className="ai-delivery-band">
-            <div className="ai-delivery-head"><div><span>How we deliver</span><h3>A clear path from first decision<br />to continuous improvement.</h3></div><p>Each stage produces a concrete outcome, reduces uncertainty, and prepares the next stage for faster execution.</p></div>
-            <div className="ai-delivery-steps">
-              {aiDeliveryProcess.map((stage, index) => <article key={stage.title}><div><span>{String(index + 1).padStart(2, "0")}</span>{index < aiDeliveryProcess.length - 1 && <i aria-hidden="true">→</i>}</div><h4>{stage.title}</h4><p>{stage.description}</p></article>)}
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -228,7 +235,7 @@ export default function Home() {
           <p>Deep technology capability matters most when it understands the environment around it. Hitasoft combines engineering discipline with domain-aware workflows, security, compliance, and customer expectations.</p>
         </div>
         <div className="industries-grid">
-          {industries.map(([number, title, description]) => <article key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p><a href="mailto:hello@hitasoft.com" aria-label={`Discuss ${title} solutions`}>Discuss your project <Arrow /></a></article>)}
+          {industries.map(([number, title, description]) => <article id={`industry-${title.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`} key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p><a href="mailto:hello@hitasoft.com" aria-label={`Discuss ${title} solutions`}>Discuss your project <Arrow /></a></article>)}
         </div>
       </section>
 
@@ -239,20 +246,44 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section pricing-section" id="pricing">
-        <div className="final-cta">
-          <div className="cta-ripple one" /><div className="cta-ripple two" />
-          <p className="eyebrow light">Production intelligence</p>
-          <h2>Build intelligence<br />into every layer.</h2>
-          <p>Explore the architectures, platforms, and engineering disciplines behind reliable AI-enabled products.</p>
-          <div className="cta-actions"><a className="button button-white" href="#platform">Review AI systems <Arrow /></a><a className="button button-dark-ghost" href="#resources">Engineering approach</a></div>
-          <small>Observable systems · Secure infrastructure · Responsible AI</small>
-        </div>
-      </section>
-
       <footer className="footer">
-        <div className="footer-top"><a className="brand" href="#top"><span className="brand-mark"><i /><i /><i /></span><span>Hitasoft</span></a><p>Intelligence engineered for production.</p><div className="footer-links"><a href="#platform">AI systems</a><a href="#solutions">Capabilities</a><a href="#pricing">Approach</a><a href="#resources">Engineering</a></div></div>
-        <div className="footer-bottom"><span>© 2026 Hitasoft Technologies. All rights reserved.</span><div><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#security">Security</a><a href="mailto:hello@hitasoft.com">Contact</a></div><span className="socials">in&nbsp;&nbsp;𝕏</span></div>
+        <div className="footer-cta">
+          <p>BUILD WHAT COMES NEXT</p>
+          <h2>Turn your boldest idea into<br />a production-ready <em>AI system.</em></h2>
+          <span>One senior engineering team for strategy, product, models, security, integration, and operations.</span>
+          <div>
+            <a className="footer-primary-button" href="mailto:hello@hitasoft.com">Start a project <Arrow /></a>
+            <a className="footer-secondary-button" href="#portfolio">Explore our work <Arrow /></a>
+          </div>
+        </div>
+
+        <div className="footer-main">
+          <div className="footer-brand-block">
+            <a className="brand" href="#top"><span className="brand-mark"><i /><i /><i /></span><span>Hitasoft</span></a>
+            <p>We engineer practical AI products and resilient digital systems that create measurable business value.</p>
+            <div className="footer-trust"><b>9+</b><span>connected AI capabilities<br />from one delivery team</span></div>
+            <div className="footer-socials" aria-label="Hitasoft social channels"><span>in</span><span>𝕏</span><a href="mailto:hello@hitasoft.com" aria-label="Email Hitasoft">@</a></div>
+          </div>
+
+          <nav className="footer-link-column" aria-label="Company links">
+            <strong>Company</strong>
+            <a href="#top">About us</a><a href="#portfolio">Selected work</a><a href="#resources">Engineering</a><a href="mailto:hello@hitasoft.com">Contact</a>
+          </nav>
+          <nav className="footer-link-column" aria-label="Services links">
+            <strong>Services</strong>
+            <a href="#solutions">AI consulting</a><a href="#solutions">Product engineering</a><a href="#solutions">Generative AI</a><a href="#solutions">AI agents</a>
+          </nav>
+
+          <form className="footer-contact" action="mailto:hello@hitasoft.com" method="post" encType="text/plain">
+            <strong>Tell us what you are building</strong>
+            <input name="name" aria-label="Full name" placeholder="Full name" />
+            <input name="email" type="email" aria-label="Email address" placeholder="Work email" />
+            <textarea name="message" aria-label="Project message" placeholder="Project details" rows={4} />
+            <button type="submit">Send message <Arrow /></button>
+          </form>
+        </div>
+        <div className="footer-legal"><span>© 2026 Hitasoft Technologies. All rights reserved.</span><div><a href="#terms">Terms</a><a href="#privacy">Privacy</a><a href="#security">Security</a></div></div>
+        <div className="footer-wordmark" aria-hidden="true">hitasoft</div>
       </footer>
     </main>
   );
