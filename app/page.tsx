@@ -6,15 +6,23 @@ const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
 );
 
 const aiCapabilities = [
-  "AI consulting",
-  "Product engineering",
-  "Generative AI",
-  "AI agents",
-  "Assistants & chatbots",
-  "Enterprise integration",
-  "AI cybersecurity",
-  "AIOps",
-  "AI copilots",
+  { title: "AI consulting", label: "Strategy", description: "Find the strongest use cases, assess data and technical readiness, and turn ambition into a practical AI roadmap.", outcomes: ["Opportunity mapping", "Readiness roadmap"] },
+  { title: "Product engineering", label: "Build", description: "Design and engineer complete AI products with dependable architecture, thoughtful UX, evaluation, and production deployment.", outcomes: ["Product architecture", "Production release"] },
+  { title: "Generative AI", label: "Models", description: "Build secure LLM and multimodal experiences grounded in your enterprise knowledge, workflows, and quality standards.", outcomes: ["Enterprise RAG", "Model evaluation"] },
+  { title: "AI agents", label: "Automation", description: "Create context-aware agents that reason across tasks, coordinate tools, and automate complex operational workflows.", outcomes: ["Agent workflows", "Tool orchestration"] },
+  { title: "Assistants & chatbots", label: "Experience", description: "Deliver conversational systems that understand intent and context across customer, employee, and support journeys.", outcomes: ["Smart assistants", "Conversational UX"] },
+  { title: "Enterprise integration", label: "Connect", description: "Connect models to business software, governed data, APIs, and teams without disrupting critical systems.", outcomes: ["System integration", "Data connectivity"] },
+  { title: "AI cybersecurity", label: "Trust", description: "Protect AI applications, data flows, models, and access with controls designed into every layer of delivery.", outcomes: ["Risk controls", "Threat monitoring"] },
+  { title: "AIOps", label: "Operations", description: "Use operational intelligence to reduce alert noise, predict incidents, and accelerate root-cause analysis and recovery.", outcomes: ["Predictive operations", "Incident automation"] },
+  { title: "AI copilots", label: "Productivity", description: "Equip teams with role-aware copilots for knowledge discovery, recommendations, decisions, and faster execution.", outcomes: ["Knowledge intelligence", "Role-aware support"] },
+];
+
+const aiDeliveryProcess = [
+  { title: "Discover", description: "Align the business case, users, data, risks, and measurable success criteria before choosing the technology." },
+  { title: "Design", description: "Shape the experience, system architecture, model approach, governance, and evaluation plan as one blueprint." },
+  { title: "Build", description: "Develop the product, data pipelines, models, guardrails, and quality checks in focused delivery cycles." },
+  { title: "Integrate", description: "Connect the solution to enterprise data, software, identity, and workflows with minimal disruption." },
+  { title: "Operate", description: "Monitor quality, cost, security, reliability, and adoption—then improve continuously in production." },
 ];
 
 const navMenus = [
@@ -188,12 +196,28 @@ export default function Home() {
               <div className="ai-pulse" aria-hidden="true"><i /><i /><i /><i /></div>
             </article>
           </div>
-          <div className="ai-capability-list" aria-label="AI development capabilities">
-            {aiCapabilities.map((capability, index) => <a href="mailto:hello@hitasoft.com" key={capability}><span>{String(index + 1).padStart(2, "0")}</span>{capability}<Arrow diagonal /></a>)}
+          <div className="ai-capabilities-block">
+            <div className="ai-subsection-head">
+              <div><span>Specialist capability</span><h3>Everything needed to move<br />AI into production.</h3></div>
+              <p>Engage one service or bring the full practice together. Every capability is designed to connect cleanly with the next.</p>
+            </div>
+            <div className="ai-capability-list" aria-label="AI development capabilities">
+              {aiCapabilities.map((capability, index) => (
+                <article className="ai-capability-card" key={capability.title}>
+                  <div className="ai-capability-meta"><span>{String(index + 1).padStart(2, "0")}</span><small>{capability.label}</small><i aria-hidden="true">↗</i></div>
+                  <h4>{capability.title}</h4>
+                  <p>{capability.description}</p>
+                  <div className="ai-capability-outcomes">{capability.outcomes.map((outcome) => <span key={outcome}>{outcome}</span>)}</div>
+                  <a href="mailto:hello@hitasoft.com" aria-label={`Discuss ${capability.title}`}>Explore capability <Arrow diagonal /></a>
+                </article>
+              ))}
+            </div>
           </div>
           <div className="ai-delivery-band">
-            <span>How we deliver</span>
-            <div><b>Discover</b><i>→</i><b>Design</b><i>→</i><b>Build</b><i>→</i><b>Integrate</b><i>→</i><b>Operate</b></div>
+            <div className="ai-delivery-head"><div><span>How we deliver</span><h3>A clear path from first decision<br />to continuous improvement.</h3></div><p>Each stage produces a concrete outcome, reduces uncertainty, and prepares the next stage for faster execution.</p></div>
+            <div className="ai-delivery-steps">
+              {aiDeliveryProcess.map((stage, index) => <article key={stage.title}><div><span>{String(index + 1).padStart(2, "0")}</span>{index < aiDeliveryProcess.length - 1 && <i aria-hidden="true">→</i>}</div><h4>{stage.title}</h4><p>{stage.description}</p></article>)}
+            </div>
           </div>
         </div>
       </section>
