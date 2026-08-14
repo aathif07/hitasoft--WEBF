@@ -129,14 +129,16 @@ export default function Home() {
 
       <section className="section alternate ai-services-section" id="solutions">
         <div className="ai-services-shell">
+          <div className="ai-spectrum" aria-hidden="true"><i /><i /><i /></div>
           <div className="ai-services-head">
             <div>
-              <p className="eyebrow">End-to-end AI development services</p>
-              <h2>Enterprise AI,<br /><span>from strategy to scale.</span></h2>
+              <p className="eyebrow">Hitasoft AI / Full lifecycle delivery</p>
+              <h2>End-to-end AI<br /><span>development services.</span></h2>
             </div>
             <div className="ai-services-intro">
-              <span>HITASOFT / AI PRACTICE</span>
-              <p>We combine strategy, product engineering, data, models, integrations, security, and operations to deliver resilient AI systems across complex business environments.</p>
+              <span>FROM FIRST IDEA TO PRODUCTION INTELLIGENCE</span>
+              <p>One senior team brings together strategy, product engineering, data, models, integrations, security, and operations—so your AI moves beyond the prototype and creates measurable value.</p>
+              <a href="mailto:hello@hitasoft.com">Plan an AI initiative <Arrow diagonal /></a>
             </div>
           </div>
           <div className="services-grid">
@@ -146,6 +148,7 @@ export default function Home() {
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
                 <div className="service-outcomes">{service.outcomes.map((outcome) => <span key={outcome}>{outcome}</span>)}</div>
+                <a className="service-link" href="mailto:hello@hitasoft.com" aria-label={`Discuss ${service.title}`}>Explore service <Arrow diagonal /></a>
               </article>
             ))}
           </div>
