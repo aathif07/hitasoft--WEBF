@@ -1,3 +1,5 @@
+import { ScrollRevealHeading } from "./ScrollRevealHeading";
+
 const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
   <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>
 );
@@ -106,7 +108,7 @@ export default function Home() {
 
       <section className="impact-section" id="about" aria-labelledby="impact-title">
         <div className="impact-intro">
-          <h2 id="impact-title">We help ambitious companies turn complex technology into <span>clear, useful, and lasting products.</span></h2>
+          <ScrollRevealHeading />
           <p>Making technology matter</p>
         </div>
         <div className="impact-card">

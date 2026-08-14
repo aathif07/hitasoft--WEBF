@@ -211,11 +211,10 @@ body{background:#050b13;color:#f4f8fc}
 .pricing-section{background:#f8fafc;color:#0c1723;box-shadow:0 0 0 100vmax #f8fafc;clip-path:inset(0 -100vmax)}
 .footer{background:#050b13;color:#eaf3fa;box-shadow:0 0 0 100vmax #050b13;clip-path:inset(0 -100vmax)}
 
-/* Scroll reveal for the impact statement. */
-@keyframes impact-heading-scroll-reveal{0%{opacity:.08;transform:translate3d(0,72px,0) scale(.96);filter:blur(12px);clip-path:inset(0 0 92% 0)}55%{opacity:.72;filter:blur(3px)}100%{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0);clip-path:inset(0 0 0 0)}}
-@keyframes impact-heading-accent-reveal{0%{color:#c7ced5}100%{color:#8994a0}}
-@supports(animation-timeline:view()){
-  .impact-intro h2{will-change:transform,opacity,filter;animation:impact-heading-scroll-reveal linear both;animation-timeline:view();animation-range:entry 5% cover 42%;transform-origin:left bottom}
-  .impact-intro h2>span{animation:impact-heading-accent-reveal linear both;animation-timeline:view();animation-range:entry 22% cover 48%}
-}
-@media(prefers-reduced-motion:reduce){.impact-intro h2,.impact-intro h2>span{animation:none!important;transform:none!important;filter:none!important;clip-path:none!important;opacity:1!important}}
+/* Scroll-linked masked reveal for the impact statement. */
+.impact-intro h2{--impact-reveal:1;overflow:hidden}
+.impact-reveal-copy{display:block;color:inherit!important}
+.impact-reveal-accent{color:#8994a0}
+.impact-intro h2[data-scroll-reveal="ready"] .impact-reveal-copy{opacity:calc(.08 + var(--impact-reveal) * .92);transform:translate3d(0,calc((1 - var(--impact-reveal)) * 72px),0) scale(calc(.965 + var(--impact-reveal) * .035));filter:blur(calc((1 - var(--impact-reveal)) * 11px));clip-path:inset(0 0 calc((1 - var(--impact-reveal)) * 96%) 0);transform-origin:left bottom;will-change:transform,opacity,filter,clip-path}
+.impact-intro h2[data-scroll-reveal="ready"] .impact-reveal-accent{color:color-mix(in srgb,#c7ced5 calc((1 - var(--impact-reveal)) * 100%),#8994a0)}
+@media(prefers-reduced-motion:reduce){.impact-reveal-copy{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}.impact-reveal-accent{color:#8994a0!important}}
