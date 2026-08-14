@@ -1,4 +1,5 @@
 import { ScrollRevealHeading } from "./ScrollRevealHeading";
+import { MarqueeLogoScroller } from "@/components/ui/marquee-logo-scroller";
 
 const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
   <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>
@@ -58,6 +59,15 @@ const industries = [
   ["08", "Travel & Hospitality", "Booking ecosystems, intelligent assistance, operations software, and seamless guest experiences."],
 ];
 
+const deliveryStages = [
+  { alt: "Strategy", gradient: { from: "#d9efff", via: "#8fd2ff", to: "#3d9fdf" } },
+  { alt: "Design", gradient: { from: "#e1ddff", via: "#aaa2ff", to: "#6860ce" } },
+  { alt: "Build", gradient: { from: "#d2f4ef", via: "#7ed8cc", to: "#2e9f96" } },
+  { alt: "Cloud", gradient: { from: "#dce8ff", via: "#8fb3ff", to: "#446fc8" } },
+  { alt: "Security", gradient: { from: "#e3f7d4", via: "#9edc77", to: "#4b9f48" } },
+  { alt: "Scale", gradient: { from: "#ffe6ce", via: "#ffb66f", to: "#d77437" } },
+];
+
 export default function Home() {
   return (
     <main>
@@ -101,9 +111,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="logo-strip" aria-label="Customer logos">
-        <p>One technology partner across the full delivery lifecycle</p>
-        <div><b>Strategy</b><b>Design</b><b>Build</b><b>Cloud</b><b>Security</b><b>Scale</b></div>
+      <section className="logo-strip" aria-label="Full delivery lifecycle">
+        <MarqueeLogoScroller
+          title="One technology partner across the full delivery lifecycle"
+          description="A connected senior team from first decision through secure, production-scale delivery."
+          logos={deliveryStages}
+          speed="normal"
+        />
       </section>
 
       <section className="impact-section" id="about" aria-labelledby="impact-title">
