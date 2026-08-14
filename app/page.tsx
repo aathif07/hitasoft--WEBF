@@ -232,21 +232,15 @@ export default function Home() {
       <section className="industries-section" id="industries">
         <div className="industries-head">
           <div><p className="eyebrow">Industry-focused engineering</p><h2>Built for the realities<br />of your industry.</h2></div>
-          <p>Deep technology capability matters most when it understands the environment around it. Hitasoft combines engineering discipline with domain-aware workflows, security, compliance, and customer expectations.</p>
+          <div className="industries-intro"><p>Deep technology capability matters most when it understands the environment around it. Hitasoft combines engineering discipline with domain-aware workflows, security, compliance, and customer expectations.</p><div><b>08</b><span>industry environments<br />served by one senior team</span></div></div>
         </div>
         <div className="industries-grid">
-          {industries.map(([number, title, description]) => <article id={`industry-${title.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`} key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p><a href="mailto:hello@hitasoft.com" aria-label={`Discuss ${title} solutions`}>Discuss your project <Arrow /></a></article>)}
+          {industries.map(([number, title, description], index) => <article className={`industry-card industry-card-${index + 1}`} id={`industry-${title.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`} key={title}><div className="industry-card-top"><span>{number}</span><i aria-hidden="true">↗</i></div><div className="industry-card-copy"><small>Industry system</small><h3>{title}</h3><p>{description}</p></div><a href="mailto:hello@hitasoft.com" aria-label={`Discuss ${title} solutions`}>Explore {title} <Arrow /></a></article>)}
         </div>
+        <div className="industries-footer"><p>Don&apos;t see your industry?</p><span>Our engineering approach adapts to complex operating environments, regulated workflows, and specialized customer needs.</span><a href="mailto:hello@hitasoft.com?subject=Industry%20AI%20project">Discuss your environment <Arrow diagonal /></a></div>
       </section>
 
-      <section className="section proof-section" id="resources">
-        <div className="proof-grid">
-          <blockquote><span className="quote-mark">“</span><p>Intelligence is only valuable when the system around it is observable, secure, and reliable. We engineer all four as one production architecture.</p><footer><div className="avatar">HI</div><div><b>Hitasoft Engineering</b><small>Applied AI and systems architecture</small></div></footer></blockquote>
-          <div className="proof-stats"><div><b>01</b><span>architecture from model to production</span></div><div><b>24/7</b><span>observability across every service</span></div><div><b>100%</b><span>security designed into the stack</span></div><div><b>∞</b><span>systems built to learn and adapt</span></div></div>
-        </div>
-      </section>
-
-      <footer className="footer">
+      <footer className="footer" id="resources">
         <div className="footer-cta">
           <p>BUILD WHAT COMES NEXT</p>
           <h2>Turn your boldest idea into<br />a production-ready <em>AI system.</em></h2>
