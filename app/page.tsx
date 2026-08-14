@@ -5,16 +5,9 @@ const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
   <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>
 );
 
-const services = [
-  { number: "01", label: "Strategy", title: "AI Consulting", description: "Identify high-value AI opportunities, assess data readiness, and define a practical roadmap for responsible adoption.", outcomes: ["Use-case discovery", "AI readiness roadmap"] },
-  { number: "02", label: "Product", title: "AI Product Engineering", description: "Engineer complete AI products—from architecture and model development to deployment, monitoring, and scale.", outcomes: ["Product architecture", "Production deployment"] },
-  { number: "03", label: "Generative AI", title: "Generative AI Development", description: "Build secure LLM, multimodal, fine-tuned, and retrieval-augmented applications around your enterprise knowledge.", outcomes: ["Enterprise RAG", "Custom model workflows"] },
-  { number: "04", label: "Automation", title: "AI Agent Development", description: "Create context-aware agents that automate multi-step work, coordinate tools, and support real-time decisions.", outcomes: ["Agentic workflows", "Tool orchestration"] },
-  { number: "05", label: "Experience", title: "AI Assistants & Chatbots", description: "Develop conversational systems that understand intent, context, and sentiment across customer and internal workflows.", outcomes: ["Smart assistants", "Conversational interfaces"] },
-  { number: "06", label: "Integration", title: "Enterprise AI Integration", description: "Connect intelligent capabilities to existing software, data, and operations without disrupting critical business systems.", outcomes: ["System integration", "Data connectivity"] },
-  { number: "07", label: "Trust", title: "AI Cybersecurity", description: "Protect AI environments with anomaly detection, pipeline monitoring, risk controls, and compliance-focused safeguards.", outcomes: ["AI risk controls", "Continuous monitoring"] },
-  { number: "08", label: "Operations", title: "AIOps", description: "Use operational intelligence to reduce alert noise, predict incidents, automate monitoring, and accelerate root-cause analysis.", outcomes: ["Predictive operations", "Incident automation"] },
-  { number: "09", label: "Productivity", title: "AI Copilot Solutions", description: "Equip teams with role-aware copilots for knowledge search, workflow assistance, recommendations, and faster decisions.", outcomes: ["Role-aware copilots", "Knowledge intelligence"] },
+const aiCapabilities = [
+  "AI consulting", "Product engineering", "Generative AI", "AI agents", "Assistants & chatbots",
+  "Enterprise integration", "AI cybersecurity", "AIOps", "AI copilots",
 ];
 
 const navMenus = [
@@ -60,12 +53,12 @@ const industries = [
 ];
 
 const deliveryStages = [
-  { alt: "Strategy", gradient: { from: "#d9efff", via: "#8fd2ff", to: "#3d9fdf" } },
-  { alt: "Design", gradient: { from: "#e1ddff", via: "#aaa2ff", to: "#6860ce" } },
-  { alt: "Build", gradient: { from: "#d2f4ef", via: "#7ed8cc", to: "#2e9f96" } },
-  { alt: "Cloud", gradient: { from: "#dce8ff", via: "#8fb3ff", to: "#446fc8" } },
-  { alt: "Security", gradient: { from: "#e3f7d4", via: "#9edc77", to: "#4b9f48" } },
-  { alt: "Scale", gradient: { from: "#ffe6ce", via: "#ffb66f", to: "#d77437" } },
+  { alt: "Strategy & Discovery", icon: "⌁", gradient: { from: "#d9efff", via: "#8fd2ff", to: "#3d9fdf" } },
+  { alt: "Experience Design", icon: "✦", gradient: { from: "#e1ddff", via: "#aaa2ff", to: "#6860ce" } },
+  { alt: "Product Engineering", icon: "⌘", gradient: { from: "#d2f4ef", via: "#7ed8cc", to: "#2e9f96" } },
+  { alt: "Cloud Delivery", icon: "☁", gradient: { from: "#dce8ff", via: "#8fb3ff", to: "#446fc8" } },
+  { alt: "Security & Trust", icon: "◇", gradient: { from: "#e3f7d4", via: "#9edc77", to: "#4b9f48" } },
+  { alt: "Scale & Optimize", icon: "↗", gradient: { from: "#ffe6ce", via: "#ffb66f", to: "#d77437" } },
 ];
 
 export default function Home() {
@@ -157,17 +150,26 @@ export default function Home() {
               <a href="mailto:hello@hitasoft.com">Plan an AI initiative <Arrow diagonal /></a>
             </div>
           </div>
-          <div className="services-grid">
-            {services.map((service) => (
-              <article className="service-card" key={service.title}>
-                <div className="service-meta"><span>{service.number}</span><small>{service.label}</small></div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <div className="service-outcomes">{service.outcomes.map((outcome) => <span key={outcome}>{outcome}</span>)}</div>
-                <a className="service-link" href="mailto:hello@hitasoft.com" aria-label={`Discuss ${service.title}`}>Explore service <Arrow diagonal /></a>
-              </article>
-            ))}
+          <div className="ai-feature-grid">
+            <article className="ai-feature-card ai-feature-image">
+              <div className="ai-card-top"><span>01</span><small>Strategy to scale</small></div>
+              <div className="ai-image-copy"><strong>One senior team.<br />Every AI layer.</strong><p>Strategy, data, models, product, security, and operations—connected from day one.</p></div>
+              <a href="mailto:hello@hitasoft.com" aria-label="Start an AI project">Start a project <Arrow diagonal /></a>
+            </article>
+            <article className="ai-feature-card ai-feature-editorial">
+              <div className="ai-card-top"><span>02</span><small>Production mindset</small></div>
+              <div className="ai-orbit" aria-hidden="true"><i /><i /><i /></div>
+              <blockquote>“We engineer the system around the model—so it stays useful, secure, and reliable in the real world.”</blockquote>
+              <div className="ai-card-signoff"><span className="avatar">HI</span><span><b>Hitasoft Engineering</b><small>Applied AI & systems</small></span></div>
+            </article>
+            <article className="ai-feature-card ai-feature-blue">
+              <div className="ai-card-top"><span>03</span><small>Connected capability</small></div><strong className="ai-stat">9<span>+</span></strong><p>AI capabilities, delivered as one integrated practice.</p><div className="ai-card-arrow" aria-hidden="true">↗</div>
+            </article>
+            <article className="ai-feature-card ai-feature-black">
+              <div className="ai-card-top"><span>04</span><small>Beyond launch</small></div><strong className="ai-stat">24<span>/7</span></strong><p>Monitoring and operational support for production AI systems.</p><div className="ai-pulse" aria-hidden="true"><i /><i /><i /><i /></div>
+            </article>
           </div>
+          <div className="ai-capability-list" aria-label="AI development capabilities">{aiCapabilities.map((capability, index) => <a href="mailto:hello@hitasoft.com" key={capability}><span>{String(index + 1).padStart(2, "0")}</span>{capability}<Arrow diagonal /></a>)}</div>
           <div className="ai-delivery-band">
             <span>How we deliver</span>
             <div><b>Discover</b><i>→</i><b>Design</b><i>→</i><b>Build</b><i>→</i><b>Integrate</b><i>→</i><b>Operate</b></div>

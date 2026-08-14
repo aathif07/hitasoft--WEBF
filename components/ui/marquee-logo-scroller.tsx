@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 interface Logo {
   src?: string;
   alt: string;
+  icon?: string;
   gradient: { from: string; via: string; to: string };
 }
 
@@ -54,7 +55,7 @@ const MarqueeLogoScroller = React.forwardRef<HTMLDivElement, MarqueeLogoScroller
                     {String((index % logos.length) + 1).padStart(2, "0")}
                   </span>
                   {logo.src ? <img src={logo.src} alt={logo.alt} /> : <strong>{logo.alt}</strong>}
-                  <span className="marquee-logo-arrow" aria-hidden="true">↗</span>
+                  <span className="marquee-logo-icon" aria-hidden="true">{logo.icon ?? "↗"}</span>
                 </div>
               );
             })}
