@@ -1,13 +1,20 @@
 import { ScrollRevealHeading } from "./ScrollRevealHeading";
-import { MarqueeLogoScroller } from "@/components/ui/marquee-logo-scroller";
+import { MarqueeLogoScroller } from "../components/ui/marquee-logo-scroller";
 
 const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
   <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>
 );
 
 const aiCapabilities = [
-  "AI consulting", "Product engineering", "Generative AI", "AI agents", "Assistants & chatbots",
-  "Enterprise integration", "AI cybersecurity", "AIOps", "AI copilots",
+  "AI consulting",
+  "Product engineering",
+  "Generative AI",
+  "AI agents",
+  "Assistants & chatbots",
+  "Enterprise integration",
+  "AI cybersecurity",
+  "AIOps",
+  "AI copilots",
 ];
 
 const navMenus = [
@@ -153,23 +160,37 @@ export default function Home() {
           <div className="ai-feature-grid">
             <article className="ai-feature-card ai-feature-image">
               <div className="ai-card-top"><span>01</span><small>Strategy to scale</small></div>
-              <div className="ai-image-copy"><strong>One senior team.<br />Every AI layer.</strong><p>Strategy, data, models, product, security, and operations—connected from day one.</p></div>
+              <div className="ai-image-copy">
+                <strong>One senior team.<br />Every AI layer.</strong>
+                <p>Strategy, data, models, product, security, and operations—connected from day one.</p>
+              </div>
               <a href="mailto:hello@hitasoft.com" aria-label="Start an AI project">Start a project <Arrow diagonal /></a>
             </article>
+
             <article className="ai-feature-card ai-feature-editorial">
               <div className="ai-card-top"><span>02</span><small>Production mindset</small></div>
               <div className="ai-orbit" aria-hidden="true"><i /><i /><i /></div>
               <blockquote>“We engineer the system around the model—so it stays useful, secure, and reliable in the real world.”</blockquote>
               <div className="ai-card-signoff"><span className="avatar">HI</span><span><b>Hitasoft Engineering</b><small>Applied AI & systems</small></span></div>
             </article>
+
             <article className="ai-feature-card ai-feature-blue">
-              <div className="ai-card-top"><span>03</span><small>Connected capability</small></div><strong className="ai-stat">9<span>+</span></strong><p>AI capabilities, delivered as one integrated practice.</p><div className="ai-card-arrow" aria-hidden="true">↗</div>
+              <div className="ai-card-top"><span>03</span><small>Connected capability</small></div>
+              <strong className="ai-stat">9<span>+</span></strong>
+              <p>AI capabilities, delivered as one integrated practice.</p>
+              <div className="ai-card-arrow" aria-hidden="true">↗</div>
             </article>
+
             <article className="ai-feature-card ai-feature-black">
-              <div className="ai-card-top"><span>04</span><small>Beyond launch</small></div><strong className="ai-stat">24<span>/7</span></strong><p>Monitoring and operational support for production AI systems.</p><div className="ai-pulse" aria-hidden="true"><i /><i /><i /><i /></div>
+              <div className="ai-card-top"><span>04</span><small>Beyond launch</small></div>
+              <strong className="ai-stat">24<span>/7</span></strong>
+              <p>Monitoring and operational support for production AI systems.</p>
+              <div className="ai-pulse" aria-hidden="true"><i /><i /><i /><i /></div>
             </article>
           </div>
-          <div className="ai-capability-list" aria-label="AI development capabilities">{aiCapabilities.map((capability, index) => <a href="mailto:hello@hitasoft.com" key={capability}><span>{String(index + 1).padStart(2, "0")}</span>{capability}<Arrow diagonal /></a>)}</div>
+          <div className="ai-capability-list" aria-label="AI development capabilities">
+            {aiCapabilities.map((capability, index) => <a href="mailto:hello@hitasoft.com" key={capability}><span>{String(index + 1).padStart(2, "0")}</span>{capability}<Arrow diagonal /></a>)}
+          </div>
           <div className="ai-delivery-band">
             <span>How we deliver</span>
             <div><b>Discover</b><i>→</i><b>Design</b><i>→</i><b>Build</b><i>→</i><b>Integrate</b><i>→</i><b>Operate</b></div>
