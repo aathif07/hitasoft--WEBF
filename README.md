@@ -92,6 +92,18 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 - `npm test`: build the starter and verify its rendered loading skeleton
 - `npm run db:generate`: generate Drizzle migrations after schema changes
 
+## Docker
+
+Build and run the production container locally:
+
+```bash
+docker build -t hitasoft-web .
+docker run --rm -p 3000:3000 hitasoft-web
+```
+
+The container listens on `0.0.0.0` and uses the `PORT` environment variable,
+which defaults to `3000`.
+
 ## Learn More
 
 - [vinext Documentation](https://github.com/cloudflare/vinext)
