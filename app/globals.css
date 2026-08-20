@@ -4288,7 +4288,11 @@ html[data-motion="on"] .hero h1 em {
   border-radius: var(--radius-lg);
   text-align: center;
   overflow: hidden;
-  background: #052b86 url("/images/blue-cta-texture.png") 50% 38% / cover no-repeat;
+  background-color: #052b86;
+  background-image: url("/images/blue-cta-texture.png");
+  background-position: 50% 38%;
+  background-size: cover;
+  background-repeat: no-repeat;
   box-shadow:
     0 30px 90px rgba(0, 25, 91, 0.38),
     inset 0 1px rgba(255, 255, 255, 0.2);
@@ -4300,8 +4304,8 @@ html[data-motion="on"] .hero h1 em {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(1, 17, 68, 0.38), rgba(2, 15, 65, 0.16) 44%, rgba(0, 11, 54, 0.54)),
-    radial-gradient(ellipse 65% 72% at 50% 48%, rgba(11, 67, 176, 0.08), rgba(0, 8, 50, 0.24) 100%);
+    linear-gradient(180deg, rgba(1, 17, 68, 0.2), rgba(2, 15, 65, 0.04) 44%, rgba(0, 11, 54, 0.34)),
+    radial-gradient(ellipse 52% 58% at 50% 50%, rgba(0, 10, 55, 0.3), rgba(0, 8, 50, 0.06) 72%);
 }
 
 .footer-cta > * {
@@ -4310,8 +4314,8 @@ html[data-motion="on"] .hero h1 em {
 }
 
 .footer-cta > p {
-  margin: 0 0 19px;
-  color: #a9e8ff;
+  margin: 0 0 22px;
+  color: #d6f5ff;
   text-shadow: 0 2px 20px rgba(0, 10, 54, 0.65);
 }
 
@@ -4320,7 +4324,7 @@ html[data-motion="on"] .hero h1 em {
   max-width: 1040px;
   color: #fff;
   font-size: clamp(34px, 4.4vw, 68px);
-  font-weight: 500;
+  font-weight: 540;
   line-height: 1.02;
   letter-spacing: -0.055em;
   text-shadow: 0 4px 34px rgba(0, 11, 62, 0.55);
@@ -4345,8 +4349,8 @@ html[data-motion="on"] .hero h1 em {
   display: block;
   max-width: 650px;
   margin: 20px auto 27px;
-  color: rgba(234, 247, 255, 0.82);
-  font-size: 14px;
+  color: rgba(244, 251, 255, 0.9);
+  font-size: 15px;
   line-height: 1.6;
   text-shadow: 0 2px 18px rgba(0, 10, 54, 0.6);
 }
