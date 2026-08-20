@@ -1,7 +1,7 @@
 "use client";
 
 import { type CSSProperties, useCallback, useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { Card } from "./card";
 import { Carousel, type CarouselApi, CarouselContent, CarouselItem } from "./carousel";
@@ -139,7 +139,6 @@ function Case() {
                   <div className="case-study-tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                   <div className="case-study-result">
                     <div><small>Measured outcome</small><strong>{item.metric}</strong><span>{item.outcome}</span></div>
-                    <a href="mailto:hello@hitasoft.com" aria-label={`Discuss the ${item.title} case study`}>View case <ArrowUpRight /></a>
                   </div>
                 </div>
               </Card>
