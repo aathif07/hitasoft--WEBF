@@ -3041,6 +3041,33 @@ html[data-motion="on"] .hero h1 em {
   --grid-cell: 43px;
 }
 
+.case-study-visual::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 210px;
+  height: 280px;
+  right: 8px;
+  bottom: -70px;
+  pointer-events: none;
+  opacity: 0.34;
+  background: url("/images/delivery-robot-full.png") center / contain no-repeat;
+  filter:
+    saturate(0.78)
+    brightness(0.76)
+    drop-shadow(-16px 15px 22px color-mix(in srgb, var(--case-accent) 42%, transparent));
+  transform: translate3d(0, 7px, 0) scale(0.96);
+  transform-origin: bottom right;
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+}
+
+.case-study-card:hover .case-study-visual::after {
+  opacity: 0.46;
+  transform: translate3d(-5px, 0, 0) scale(1);
+}
+
 .case-study-meta {
   position: relative;
   z-index: 2;
@@ -3081,48 +3108,6 @@ html[data-motion="on"] .hero h1 em {
   position: absolute;
   z-index: 1;
   inset: 60px 22px 0;
-}
-
-.case-study-art i {
-  position: absolute;
-  border: 1px solid color-mix(in srgb, var(--case-accent) 70%, white);
-  border-radius: 50%;
-  opacity: 0.46;
-  transition: transform var(--dur-slow) var(--ease-out);
-}
-
-.case-study-art i:nth-child(1) {
-  width: 245px;
-  height: 125px;
-  right: -35px;
-  top: 32px;
-  transform: rotate(-13deg);
-}
-
-.case-study-art i:nth-child(2) {
-  width: 175px;
-  height: 175px;
-  right: 35px;
-  top: 0;
-  transform: rotate(28deg);
-}
-
-.case-study-art i:nth-child(3) {
-  width: 13px;
-  height: 13px;
-  right: 129px;
-  top: 78px;
-  background: var(--case-accent);
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 10px color-mix(in srgb, var(--case-accent) 18%, transparent);
-}
-
-.case-study-card:hover .case-study-art i:nth-child(1) {
-  transform: rotate(-9deg) scale(1.04);
-}
-
-.case-study-card:hover .case-study-art i:nth-child(2) {
-  transform: rotate(33deg) scale(1.05);
 }
 
 /* The measured outcome is the hero of the card. */

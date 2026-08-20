@@ -130,7 +130,7 @@ function Case() {
               <Card className={`case-study-card case-tone-${item.tone}`} data-card>
                 <div className="case-study-visual">
                   <div className="case-study-meta"><span>{item.number}</span><small>{item.category}</small></div>
-                  <div className="case-study-art" aria-hidden="true"><i /><i /><i /><b>{item.metric}</b></div>
+                  <div className="case-study-art" aria-hidden="true"><b>{item.metric}</b></div>
                 </div>
                 <div className="case-study-body">
                   <p className="case-study-kicker">Selected system</p>
