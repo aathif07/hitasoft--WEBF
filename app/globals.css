@@ -3041,34 +3041,6 @@ html[data-motion="on"] .hero h1 em {
   --grid-cell: 43px;
 }
 
-/* The delivery robot becomes a quiet product motif behind each case metric. */
-.case-study-visual::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  width: 210px;
-  height: 280px;
-  right: -12px;
-  bottom: -72px;
-  pointer-events: none;
-  opacity: 0.24;
-  background: url("/images/delivery-robot-full.png") center / contain no-repeat;
-  filter:
-    saturate(0.65)
-    brightness(0.72)
-    drop-shadow(-18px 16px 24px color-mix(in srgb, var(--case-accent) 38%, transparent));
-  transform: translate3d(0, 7px, 0) scale(0.96);
-  transform-origin: bottom right;
-  transition:
-    opacity var(--dur-base) var(--ease-out),
-    transform var(--dur-slow) var(--ease-out);
-}
-
-.case-study-card:hover .case-study-visual::after {
-  opacity: 0.34;
-  transform: translate3d(-6px, 0, 0) scale(1);
-}
-
 .case-study-meta {
   position: relative;
   z-index: 2;
