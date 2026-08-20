@@ -22,34 +22,12 @@ const specialistCapabilities = [
 const specialistRows = [specialistCapabilities.slice(0, 5), specialistCapabilities.slice(5)];
 
 const navMenus = [
-  { label: "Hitasoft AI", href: "#solutions", heading: "Enterprise intelligence, engineered for production.", columns: [
-    { title: "AI services", items: [["AI consulting", "#capability-ai-consulting"], ["AI development", "#capability-product-engineering"], ["AI integration", "#capability-enterprise-integration"], ["AI governance", "#capability-ai-cybersecurity"]] },
-    { title: "Generative AI", items: [["Generative AI", "#capability-generative-ai"], ["AI agents", "#capability-ai-agents"], ["Enterprise RAG", "#capability-generative-ai"], ["AI copilots", "#capability-ai-copilots"]] },
-    { title: "Applied intelligence", items: [["Machine learning", "#solutions"], ["Computer vision", "#solutions"], ["Voice AI", "#capability-assistants-chatbots"], ["Intelligent automation", "#capability-ai-agents"]] },
-  ] },
-  { label: "About", href: "#about", heading: "A senior technology team built around outcomes.", columns: [
-    { title: "Company", items: [["About Hitasoft", "#about"], ["How we work", "#about"], ["Leadership", "#about"], ["Careers", "mailto:hello@hitasoft.com?subject=Careers%20at%20Hitasoft"]] },
-    { title: "Confidence", items: [["Client stories", "#portfolio"], ["Engineering principles", "#resources"], ["Security", "#capability-ai-cybersecurity"], ["Compliance", "#industries"]] },
-  ] },
-  { label: "Services", href: "#solutions", heading: "Technical foundations for adaptive products.", columns: [
-    { title: "Applied AI", items: [["AI beyond the prototype", "#solutions"], ["Agents, RAG & automation", "#capability-ai-agents"]] },
-    { title: "Cloud", items: [["99.99% infrastructure availability", "#about"], ["Performance under pressure", "#capability-aiops"]] },
-    { title: "Security", items: [["Protection in every layer", "#capability-ai-cybersecurity"], ["Secure delivery by design", "#resources"]] },
-    { title: "Integration", items: [["One connected ecosystem", "#capability-enterprise-integration"], ["Models, data & software", "#capability-product-engineering"]] },
-  ] },
-  { label: "Industries", href: "#industries", heading: "Technology shaped around real operating environments.", columns: [
-    { title: "Regulated", items: [["Healthcare", "#industry-healthcare"], ["Financial services", "#industry-financial-services"], ["Insurance", "#industries"], ["Energy", "#industries"]] },
-    { title: "Connected", items: [["Logistics", "#industry-logistics-supply-chain"], ["Automotive", "#industry-automotive-mobility"], ["Manufacturing", "#industry-manufacturing"], ["Telecom", "#industries"]] },
-    { title: "Experience-led", items: [["Retail & commerce", "#industry-retail-commerce"], ["Education", "#industry-education"], ["Travel", "#industry-travel-hospitality"], ["Media", "#industries"]] },
-  ] },
-  { label: "Portfolio", href: "#portfolio", heading: "Selected systems designed to perform and evolve.", columns: [
-    { title: "Work", items: [["AI platforms", "#portfolio"], ["Enterprise products", "#portfolio"], ["Mobile experiences", "#portfolio"], ["Cloud transformation", "#portfolio"]] },
-    { title: "Outcomes", items: [["Product launches", "#portfolio"], ["Workflow automation", "#portfolio"], ["Data intelligence", "#portfolio"], ["Platform modernization", "#portfolio"]] },
-  ] },
-  { label: "Resources", href: "#resources", heading: "Practical thinking for technology leaders.", columns: [
-    { title: "Explore", items: [["AI insights", "#resources"], ["Engineering guides", "#resources"], ["Technology briefs", "#resources"], ["FAQs", "#resources"]] },
-    { title: "Connect", items: [["Project discovery", "mailto:hello@hitasoft.com?subject=Project%20discovery"], ["Architecture review", "mailto:hello@hitasoft.com?subject=Architecture%20review"], ["AI readiness", "mailto:hello@hitasoft.com?subject=AI%20readiness"], ["Contact our team", "mailto:hello@hitasoft.com"]] },
-  ] },
+  { label: "Hitasoft AI", href: "#solutions" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#solutions" },
+  { label: "Industries", href: "#industries" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Resources", href: "#resources" },
 ];
 
 const industries = [
@@ -109,17 +87,7 @@ export default function Home() {
               <span>Hitasoft</span>
             </a>
             <div className="nav-links">
-              {navMenus.map((menu) => (
-                <div className="nav-item" key={menu.label}>
-                  <a href={menu.href}>{menu.label} <span>⌄</span></a>
-                  <div className="mega-menu">
-                    <div className="mega-intro"><small>HITASOFT</small><strong>{menu.heading}</strong><a href={menu.href}>Explore {menu.label} <Arrow /></a></div>
-                    <div className="mega-columns">
-                      {menu.columns.map((column) => <div key={column.title}><b>{column.title}</b>{column.items.map(([item, href]) => <a href={href} key={item}>{item}<span>→</span></a>)}</div>)}
-                    </div>
-                  </div>
-                </div>
-              ))}
+              {navMenus.map((menu) => <a href={menu.href} key={menu.label}>{menu.label}</a>)}
             </div>
             <a className="mobile-cta" href="mailto:hello@hitasoft.com">Contact</a>
           </nav>
