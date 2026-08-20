@@ -259,9 +259,7 @@ export default function Home() {
                 {liftStages.map((stage) => <i key={stage.number} />)}
               </div>
               <div className="core-tube">
-                <div className="core-unit">
-                  <div className="core-eyes"><i /><i /></div>
-                </div>
+                <div className="core-unit" />
               </div>
               <div className="core-base">
                 <b data-count="6">6</b>
