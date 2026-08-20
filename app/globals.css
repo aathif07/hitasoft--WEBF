@@ -2989,6 +2989,7 @@ html[data-motion="on"] .hero h1 em {
   --case-accent: #3aa9e8;
   --case-deep: #0a3550;
   position: relative;
+  isolation: isolate;
   padding: 27px;
   overflow: hidden;
   color: #fff;
@@ -3030,6 +3031,7 @@ html[data-motion="on"] .hero h1 em {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 0;
   background:
     linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
@@ -3037,6 +3039,34 @@ html[data-motion="on"] .hero h1 em {
   mask-image: linear-gradient(120deg, #000, transparent 72%);
   animation: grid-drift 22s linear infinite;
   --grid-cell: 43px;
+}
+
+/* The delivery robot becomes a quiet product motif behind each case metric. */
+.case-study-visual::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 210px;
+  height: 280px;
+  right: -12px;
+  bottom: -72px;
+  pointer-events: none;
+  opacity: 0.24;
+  background: url("/images/delivery-robot-full.png") center / contain no-repeat;
+  filter:
+    saturate(0.65)
+    brightness(0.72)
+    drop-shadow(-18px 16px 24px color-mix(in srgb, var(--case-accent) 38%, transparent));
+  transform: translate3d(0, 7px, 0) scale(0.96);
+  transform-origin: bottom right;
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+}
+
+.case-study-card:hover .case-study-visual::after {
+  opacity: 0.34;
+  transform: translate3d(-6px, 0, 0) scale(1);
 }
 
 .case-study-meta {
@@ -3077,6 +3107,7 @@ html[data-motion="on"] .hero h1 em {
 
 .case-study-art {
   position: absolute;
+  z-index: 1;
   inset: 60px 22px 0;
 }
 
