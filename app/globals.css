@@ -3568,8 +3568,8 @@ html[data-motion="on"] .hero h1 em {
   overflow: hidden;
   color: #fff;
   background:
-    linear-gradient(180deg, rgba(1, 17, 68, 0.24), rgba(0, 14, 66, 0.08) 46%, rgba(0, 10, 56, 0.34)),
-    url("/images/blue-cta-texture.png") 50% 44% / cover no-repeat;
+    linear-gradient(180deg, rgba(2, 19, 55, 0.24), rgba(2, 20, 65, 0.08) 46%, rgba(0, 14, 55, 0.3)),
+    url("/images/ai-capability-blue.jpg") 50% 46% / cover no-repeat;
   box-shadow:
     0 32px 90px rgba(0, 25, 91, 0.3),
     inset 0 1px rgba(255, 255, 255, 0.16);
@@ -4273,7 +4273,9 @@ html[data-motion="on"] .hero h1 em {
 .footer {
   position: relative;
   padding: 18px clamp(22px, 5vw, 78px) 0;
-  background: var(--night-soft);
+  background:
+    linear-gradient(180deg, rgba(2, 16, 55, 0.32), rgba(1, 12, 48, 0.64) 52%, rgba(0, 8, 36, 0.84)),
+    url("/images/ai-capability-blue.jpg") 50% 62% / cover no-repeat;
   color: #f5f8f7;
   overflow: hidden;
 }
@@ -4291,9 +4293,9 @@ html[data-motion="on"] .hero h1 em {
   border-radius: var(--radius-lg);
   text-align: center;
   overflow: hidden;
-  background-color: #052b86;
-  background-image: url("/images/blue-cta-texture.png");
-  background-position: 50% 38%;
+  background-color: #0a4b9b;
+  background-image: url("/images/ai-capability-blue.jpg");
+  background-position: 50% 46%;
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow:
@@ -4453,7 +4455,7 @@ html[data-motion="on"] .hero h1 em {
 .footer-brand-block > p {
   max-width: 360px;
   margin: 24px 0;
-  color: #899b95;
+  color: rgba(222, 241, 255, 0.72);
   font-size: 13px;
   line-height: 1.65;
 }
@@ -4474,7 +4476,7 @@ html[data-motion="on"] .hero h1 em {
 }
 
 .footer-trust span {
-  color: #81938d;
+  color: rgba(216, 238, 253, 0.68);
   font-size: 10px;
   line-height: 1.4;
 }
@@ -4490,10 +4492,10 @@ html[data-motion="on"] .hero h1 em {
   height: 37px;
   display: grid;
   place-items: center;
-  border: 1px solid #263a34;
+  border: 1px solid rgba(151, 217, 255, 0.3);
   border-radius: 999px;
-  background: #101b18;
-  color: #c9d5d1;
+  background: rgba(4, 28, 79, 0.42);
+  color: #e5f7ff;
   font-size: 12px;
   font-weight: 650;
   font-style: normal;
@@ -4529,7 +4531,7 @@ html[data-motion="on"] .hero h1 em {
 .footer-link-column a {
   position: relative;
   width: max-content;
-  color: #7f918b;
+  color: rgba(218, 239, 253, 0.68);
   font-size: 11px;
   transition: color var(--dur-fast) var(--ease-out);
 }
@@ -4569,7 +4571,7 @@ html[data-motion="on"] .hero h1 em {
   position: absolute;
   left: 13px;
   top: 12px;
-  color: #74837e;
+  color: rgba(211, 235, 251, 0.62);
   font-size: 11px;
   pointer-events: none;
   transform-origin: left top;
@@ -4588,8 +4590,8 @@ html[data-motion="on"] .hero h1 em {
 .footer-contact textarea {
   width: 100%;
   padding: 18px 13px 8px;
-  border: 1px solid #263630;
-  background: #17221f;
+  border: 1px solid rgba(151, 217, 255, 0.26);
+  background: rgba(2, 22, 70, 0.54);
   color: #fff;
   font: inherit;
   font-size: 11px;
@@ -4624,8 +4626,8 @@ html[data-motion="on"] .hero h1 em {
   justify-content: center;
   gap: 8px;
   overflow: hidden;
-  background: #f5f8f7;
-  color: #09120f;
+  background: #f4fbff;
+  color: #063784;
   font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 700;
@@ -4637,7 +4639,7 @@ html[data-motion="on"] .hero h1 em {
 }
 
 .footer-contact button:hover {
-  background: #69b8ff;
+  background: #9ce4ff;
 }
 
 .footer-contact button::after {
@@ -4661,8 +4663,8 @@ html[data-motion="on"] .hero h1 em {
   max-width: 1560px;
   margin: auto;
   padding: 22px 0;
-  border-top: 1px solid #263630;
-  color: #71817c;
+  border-top: 1px solid rgba(151, 217, 255, 0.24);
+  color: rgba(207, 232, 249, 0.58);
   font-size: 10px;
 }
 
@@ -4672,7 +4674,7 @@ html[data-motion="on"] .hero h1 em {
 }
 
 .footer-legal a {
-  color: #71817c;
+  color: rgba(207, 232, 249, 0.58);
   transition: color var(--dur-fast) var(--ease-out);
 }
 
@@ -4684,7 +4686,7 @@ html[data-motion="on"] .hero h1 em {
 .footer-wordmark {
   height: clamp(115px, 17vw, 250px);
   margin-top: -12px;
-  color: #15201d;
+  color: rgba(209, 240, 255, 0.13);
   font-size: clamp(132px, 23vw, 360px);
   font-weight: 800;
   line-height: 0.72;
