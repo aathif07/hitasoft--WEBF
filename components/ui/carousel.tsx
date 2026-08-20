@@ -57,10 +57,11 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
     React.useEffect(() => { if (api && setApi) setApi(api); }, [api, setApi]);
     React.useEffect(() => {
       if (!api) return;
-      onSelect(api);
+      // Sync after paint so the initial read does not cascade a render.
+      const frame = requestAnimationFrame(() => onSelect(api));
       api.on("reInit", onSelect);
       api.on("select", onSelect);
-      return () => { api.off("reInit", onSelect); api.off("select", onSelect); };
+      return () => { cancelAnimationFrame(frame); api.off("reInit", onSelect); api.off("select", onSelect); };
     }, [api, onSelect]);
 
     return (

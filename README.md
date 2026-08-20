@@ -18,6 +18,32 @@ npm run build
 
 This starter does not use `wrangler.jsonc`.
 
+## Landing Page Structure
+
+The marketing page is one server component plus one motion runtime.
+
+- `app/page.tsx` — the whole page. Section content lives in the arrays at the
+  top of the file.
+- `app/globals.css` — all styling, grouped into 16 numbered blocks in DOM order
+  with its own media queries co-located. Add to the block a rule belongs to;
+  do not append override layers at the end of the file.
+- `app/SiteMotion.tsx` — the single motion runtime. It owns every observer and
+  scroll listener on the page and exposes behaviour through data attributes:
+  - `data-reveal` — fade/rise in on first intersection (`data-reveal="scale"`
+    for the larger feature cards). Siblings stagger automatically.
+  - `data-card` — pointer-tracked highlight, corner brackets, hover lift.
+  - `data-count` — count the numeric prefix up when the element scrolls in.
+  - `data-marquee` — pause the contained track while off-screen.
+  - `data-progress` — expose scroll progress through the element as
+    `--progress` (drives the core-lift capsule).
+- `app/ScrollRevealHeading.tsx` — the word-by-word impact headline.
+
+Motion rules: reveals animate `translate`/`scale`, hovers animate `transform`,
+so the two compose instead of overriding each other. Durations and easings come
+from the `--dur-*` / `--ease-*` tokens. Everything decorative is disabled under
+`prefers-reduced-motion: reduce`, and content renders visible without JS —
+motion only engages once `SiteMotion` sets `html[data-motion="on"]`.
+
 ## Included Shape
 
 - edit site code under `app/`
