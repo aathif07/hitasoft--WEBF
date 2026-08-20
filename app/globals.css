@@ -1938,7 +1938,7 @@ html[data-motion="on"] .hero h1 em {
    ========================================================================== */
 .ai-services-section {
   padding: 112px 12px;
-  background: var(--night);
+  background: #fff;
   color: #fff;
 }
 
@@ -2714,7 +2714,7 @@ html[data-motion="on"] .hero h1 em {
   --progress: 0;
   position: relative;
   padding: 0 12px 96px;
-  background: var(--night);
+  background: #fff;
   color: #eaf4fb;
 }
 
