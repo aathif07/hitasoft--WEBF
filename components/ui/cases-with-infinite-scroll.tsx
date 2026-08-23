@@ -1,7 +1,6 @@
 "use client";
 
-import { type CSSProperties, useCallback, useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { Card } from "./card";
 import { Carousel, type CarouselApi, CarouselContent, CarouselItem } from "./carousel";
@@ -100,19 +99,17 @@ function Case() {
     countUp(node, portfolioCases[current % portfolioCases.length].metric);
   }, [api, current]);
 
-  /* Autoplay pauses on hover, on focus, and while the tab is hidden. */
+  /* Auto-advance pauses while the visitor is interacting with the carousel. */
   useEffect(() => {
     if (!api || paused) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const timer = window.setTimeout(() => {
       if (!document.hidden) api.scrollNext();
-    }, 4200);
+    }, 3600);
 
     return () => window.clearTimeout(timer);
   }, [api, current, paused]);
-
-  const width = 100 / portfolioCases.length;
 
   return (
     <div
@@ -146,16 +143,7 @@ function Case() {
           ))}
         </CarouselContent>
       </Carousel>
-      <div className="case-study-controls">
-        <span>{String(current + 1).padStart(2, "0")} / {String(portfolioCases.length).padStart(2, "0")}</span>
-        <div className="case-progress" role="presentation">
-          <i style={{ "--w": `${width}%`, "--x": `${current * 100}%` } as CSSProperties} />
-        </div>
-        <div>
-          <button type="button" onClick={() => api?.scrollPrev()} aria-label="Previous case study"><ArrowLeft /></button>
-          <button type="button" onClick={() => api?.scrollNext()} aria-label="Next case study"><ArrowRight /></button>
-        </div>
-      </div>
+      <span className="sr-only" aria-live="polite">Case study {current + 1} of {portfolioCases.length}</span>
     </div>
   );
 }

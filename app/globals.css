@@ -87,7 +87,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--night);
+  background: var(--paper);
   color: var(--ink);
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
   font-feature-settings: "cv11", "ss01";
@@ -603,8 +603,7 @@ html[data-scrolled] .site-header {
     radial-gradient(ellipse 50% 100% at 104% 2%, rgba(18, 111, 205, 0.68), transparent 62%),
     radial-gradient(circle at 50% 35%, #13283b 0%, #081522 37%, #030811 76%);
   box-shadow:
-    inset 0 1px rgba(255, 255, 255, 0.08),
-    0 28px 90px rgba(0, 0, 0, 0.42);
+    inset 0 1px rgba(255, 255, 255, 0.08);
 }
 
 /* Layer 1 — drifting spectrum bands. */
@@ -1069,7 +1068,7 @@ html[data-motion="on"] .hero h1 em {
   position: relative;
   z-index: 3;
   padding: 24px 4px 72px;
-  background: var(--paper-dim);
+  background: var(--paper);
   color: var(--ink);
   border-bottom: 1px solid #dce4eb;
   scroll-margin-top: 76px;
@@ -1757,7 +1756,7 @@ html[data-motion="on"] .hero h1 em {
    9. AI SERVICES + DILEMMA MOSAIC
    ========================================================================== */
 .ai-services-section {
-  padding: 112px 12px;
+  padding: 112px clamp(16px, 2vw, 32px);
   background: #fff;
   color: #fff;
 }
@@ -1765,6 +1764,7 @@ html[data-motion="on"] .hero h1 em {
 .ai-services-shell {
   position: relative;
   width: 100%;
+  max-width: 1560px;
   margin: auto;
   padding: clamp(32px, 5vw, 72px);
   border: 1px solid rgba(151, 217, 255, 0.3);
@@ -2052,6 +2052,7 @@ html[data-motion="on"] .hero h1 em {
 .practice-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   gap: 14px;
   margin-top: 14px;
 }
@@ -2063,6 +2064,7 @@ html[data-motion="on"] .hero h1 em {
   --card-glow: rgba(var(--tone), 0.18);
   display: flex;
   flex-direction: column;
+  height: 100%;
   min-height: 372px;
   padding: 26px;
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -2464,7 +2466,7 @@ html[data-motion="on"] .hero h1 em {
 
 @media (max-width: 680px) {
   .ai-services-section {
-    padding: 72px 6px;
+    padding: 72px 8px;
   }
   .ai-services-shell {
     padding: 34px 18px;
@@ -2972,7 +2974,7 @@ html[data-motion="on"] .hero h1 em {
    11. PORTFOLIO CASE STUDIES
    ========================================================================== */
 .portfolio-section {
-  padding: 118px 18px 126px;
+  padding: 118px clamp(16px, 2vw, 32px) 126px;
   background: #fff;
   color: var(--ink);
   scroll-margin-top: 76px;
@@ -3035,13 +3037,15 @@ html[data-motion="on"] .hero h1 em {
 
 .portfolio-cases {
   width: 100%;
-  padding-left: max(0px, calc((100vw - 1560px) / 2));
+  max-width: 1560px;
+  margin: 0 auto;
   overflow: hidden;
 }
 
 /* Slides recede as they leave the centre (Embla scroll progress drives --t). */
 .case-slide {
   --t: 1;
+  display: flex;
   transform: scale(calc(0.94 + var(--t) * 0.06));
   opacity: calc(0.55 + var(--t) * 0.45);
   transition:
@@ -3052,7 +3056,9 @@ html[data-motion="on"] .hero h1 em {
 .case-study-card {
   --bracket: rgba(21, 75, 115, 0.45);
   --card-glow: rgba(23, 126, 187, 0.12);
-  min-height: 610px;
+  width: 100%;
+  height: 100%;
+  min-height: 620px;
   display: grid;
   grid-template-rows: 255px 1fr;
   overflow: hidden;
@@ -3322,79 +3328,6 @@ html[data-motion="on"] .hero h1 em {
   line-height: 1.3;
 }
 
-.case-study-controls {
-  max-width: 1560px;
-  margin: 25px auto 0;
-  padding-right: 18px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 22px;
-  color: #637280;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.case-progress {
-  position: relative;
-  height: 2px;
-  border-radius: 2px;
-  background: #e3eaef;
-  overflow: hidden;
-}
-
-.case-progress i {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: var(--w, 16%);
-  border-radius: 2px;
-  background: var(--accent);
-  transform: translate3d(var(--x, 0), 0, 0);
-  transition:
-    transform var(--dur-slow) var(--ease-out),
-    width var(--dur-slow) var(--ease-out);
-}
-
-.case-study-controls > div {
-  display: flex;
-  gap: 7px;
-}
-
-.case-study-controls button {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border: 1px solid #d4dfe7;
-  border-radius: 50%;
-  background: #fff;
-  color: #15202a;
-  transition:
-    background var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out),
-    color var(--dur-fast) var(--ease-out),
-    transform var(--dur-fast) var(--ease-out);
-}
-
-.case-study-controls button:hover {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.case-study-controls button:active {
-  transform: translateY(0);
-}
-
-.case-study-controls svg {
-  width: 14px;
-  height: 14px;
-}
-
 @media (max-width: 950px) {
   .portfolio-head {
     grid-template-columns: 1fr;
@@ -3431,11 +3364,6 @@ html[data-motion="on"] .hero h1 em {
     font-size: 54px;
   }
   .case-study-result {
-    gap: 12px;
-  }
-  .case-study-controls {
-    padding: 0 8px;
-    grid-template-columns: auto 1fr auto;
     gap: 12px;
   }
 }
